@@ -1,2 +1,4 @@
 @Library('my-shared-library') _
-callRestApi()
+callRestApi({
+  tenantname = "testtenant, xyz-dev"
+})
