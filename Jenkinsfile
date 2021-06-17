@@ -1,2 +1,2 @@
 @Library('my-shared-library') _
-callRestApi tenantname : "testtenant, xyz-dev, test_folder"
+callRestApi tenantname : "xyz-dev,xyz-int"
