@@ -1,0 +1,8 @@
+@Library('my-shared-library') _
+cfService {
+  serviceName = 'xsuaa'
+  servicePlan = 'application'
+  serviceInstanceName = 'mt-xsuaa-common'
+  jsonFileName = 'xs-security.json'
+  jsonResetName = 'xs-security-reset.json'
+}

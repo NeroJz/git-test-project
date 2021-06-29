@@ -1,0 +1,4420 @@
+{
+  "xsappname": "newspage-app",
+  "tenant-mode": "shared",
+  "description": "XSUAA Definitions for NewsPage (multitenant)",
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "com.acnnp.mengine://oauth2",
+      "com.acnnp.htmlengine://oauth2",
+      "https://*dms-approuter-*.cfapps.jp10.hana.ondemand.com/**",
+      "https://*local.cfapps.jp10.hana.ondemand.com:5000/**",
+      "http://127.0.0.1:5000/**",
+      "https://*.apuat.nps.accenture.com/**",
+      "https://*.approd.nps.accenture.com/**"
+    ],
+    "system-attributes": [],
+    "token-validity": 3600
+  },
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Callback",
+      "description": "With this scope set, the callbacks for tenant onboarding, offboarding and getDependencies can be called.",
+      "grant-as-authority-to-apps": [
+        "$XSAPPNAME(application,sap-provisioning,tenant-onboarding)"
+      ]
+    },
+    {
+      "name": "$XSAPPNAME.newspage",
+      "description": "Scope assigned to all NewsPage"
+    },
+    {
+      "name": "$XSAPPNAME.systemTracingData.V",
+      "description": "View System Tracing Data"
+    },
+    {
+      "name": "$XSAPPNAME.systemTracingData.U",
+      "description": "Update System Tracing Data"
+    },
+    {
+      "name": "$XSAPPNAME.setUserScope.V",
+      "description": "View User Scope"
+    },
+    {
+      "name": "$XSAPPNAME.setUserGrpScope.V",
+      "description": "View User Group Scope"
+    },
+    {
+      "name": "$XSAPPNAME.setUserGrpScope.Ass",
+      "description": "Assign User Group Scope"
+    },
+    {
+      "name": "$XSAPPNAME.dist.V",
+      "description": "View distributor info"
+    },
+    {
+      "name": "$XSAPPNAME.dist.U",
+      "description": "Update distributor info"
+    },
+    {
+      "name": "$XSAPPNAME.distOptions.U",
+      "description": "Update distributor options"
+    },
+    {
+      "name": "$XSAPPNAME.distTransNum.V",
+      "description": "View distributor transaction number info"
+    },
+    {
+      "name": "$XSAPPNAME.distTransNum.U",
+      "description": "Update distributor transaction number info"
+    },
+    {
+      "name": "$XSAPPNAME.metaData.V",
+      "description": "Meta Data : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.metaData.U",
+      "description": "Meta Data : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.menuData.V",
+      "description": "Menu Data : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.menuData.U",
+      "description": "Menu Data : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.prodSector.V",
+      "description": "View product sector info"
+    },
+    {
+      "name": "$XSAPPNAME.prodSector.U",
+      "description": "Update product sector info"
+    },
+    {
+      "name": "$XSAPPNAME.moduleData.V",
+      "description": "View module data info"
+    },
+    {
+      "name": "$XSAPPNAME.moduleData.U",
+      "description": "Update module data info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataBank.V",
+      "description": "Bank: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.refdataBank.U",
+      "description": "Bank: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.refdataQC.V",
+      "description": "Data Quality Check: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.refdataQC.U",
+      "description": "Data Quality Check: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.objectstore.V",
+      "description": "View objectstore info"
+    },
+    {
+      "name": "$XSAPPNAME.objectstore.U",
+      "description": "Update objectstore info"
+    },
+    {
+      "name": "$XSAPPNAME.commservice.View",
+      "description": "View commservice info"
+    },
+    {
+      "name": "$XSAPPNAME.commservice.Update",
+      "description": "Update commservice info"
+    },
+    {
+      "name": "$XSAPPNAME.promo.V",
+      "description": "View Promotion"
+    },
+    {
+      "name": "$XSAPPNAME.promo.U",
+      "description": "Update Promotion"
+    },
+    {
+      "name": "$XSAPPNAME.promo.Ass",
+      "description": "Assign Promotion"
+    },
+    {
+      "name": "$XSAPPNAME.promo.A",
+      "description": "Approve Promotion"
+    },
+    {
+      "name": "$XSAPPNAME.promoPriority.V",
+      "description": "View Promotion Priority"
+    },
+    {
+      "name": "$XSAPPNAME.promoPriority.U",
+      "description": "Update Promotion Priority"
+    },
+    {
+      "name": "$XSAPPNAME.custRebate.V",
+      "description": "View Customer Rebate"
+    },
+    {
+      "name": "$XSAPPNAME.custRebate.U",
+      "description": "Update Customer Rebate"
+    },
+    {
+      "name": "$XSAPPNAME.custRebate.A",
+      "description": "Approve Customer Rebate"
+    },
+    {
+      "name": "$XSAPPNAME.refdataClaimType.V",
+      "description": "View Claim Type"
+    },
+    {
+      "name": "$XSAPPNAME.refdataClaimType.U",
+      "description": "Update Claim Type"
+    },
+    {
+      "name": "$XSAPPNAME.perfMgmtUpload.V",
+      "description": "View Performance Upload"
+    },
+    {
+      "name": "$XSAPPNAME.perfMgmtUpload.U",
+      "description": "Update  Performance Upload"
+    },
+    {
+      "name": "$XSAPPNAME.appSetting.V",
+      "description": "View Application Setting"
+    },
+    {
+      "name": "$XSAPPNAME.appSetting.U",
+      "description": "Update Application Setting"
+    },
+    {
+      "name": "$XSAPPNAME.appSetup.V",
+      "description": "View Application Setup"
+    },
+    {
+      "name": "$XSAPPNAME.appSetup.U",
+      "description": "Maintain Application Setup"
+    },
+    {
+      "name": "$XSAPPNAME.appSetupMain.V",
+      "description": "View Application Setup Main"
+    },
+    {
+      "name": "$XSAPPNAME.appSetupMain.U",
+      "description": "Maintain Application Setup Main"
+    },
+    {
+      "name": "$XSAPPNAME.rptTemp.V",
+      "description": "View Report Template"
+    },
+    {
+      "name": "$XSAPPNAME.rptTemp.U",
+      "description": "Update Report Template"
+    },
+    {
+      "name": "$XSAPPNAME.rptParam.V",
+      "description": "View Report Parameter"
+    },
+    {
+      "name": "$XSAPPNAME.rptParam.U",
+      "description": "Update Report Parameter"
+    },
+    {
+      "name": "$XSAPPNAME.rptModuleSetup.V",
+      "description": "View Report Module Setup"
+    },
+    {
+      "name": "$XSAPPNAME.rptModuleSetup.U",
+      "description": "Update Report Module Setup"
+    },
+    {
+      "name": "$XSAPPNAME.rptGenData.V",
+      "description": "View Generate Report"
+    },
+    {
+      "name": "$XSAPPNAME.perfMgmtMSL.V",
+      "description": "Must Sell List : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.perfMgmtMSL.U",
+      "description": "Must Sell List : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.perfMgmtMSL.Ass",
+      "description": "Must Sell List : Assign Permission"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkReq.U",
+      "description": "Update Van Stock Request"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkReq.V",
+      "description": "View Van Stock Request"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkRep.U",
+      "description": "Update Van Stock Replenishment"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkRep.V",
+      "description": "View Van Stock Replenishment"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkRep.R",
+      "description": "Review Van Stock Replenishment"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkOut.U",
+      "description": "Update Van Stock Out"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkOut.V",
+      "description": "View Van Stock Out"
+    },
+    {
+      "name": "$XSAPPNAME.vanStkIn.V",
+      "description": "View Van Stock In"
+    },
+    {
+      "name": "$XSAPPNAME.vanSktDamage.V",
+      "description": "View Van Stock Damages"
+    },
+    {
+      "name": "$XSAPPNAME.vanSktCount.V",
+      "description": "View Van Stock Count"
+    },
+    {
+      "name": "$XSAPPNAME.codetable.View",
+      "description": "View Code Table"
+    },
+    {
+      "name": "$XSAPPNAME.txnPrdDbn.V",
+      "description": "Product DebitNote:View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnPrdDbn.U",
+      "description": "Product DebitNote:Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnPrdDbn.R",
+      "description": "Product DebitNote:Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnNonPrdDbn.V",
+      "description": "Non Product DebitNote:View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnNonPrdDbn.U",
+      "description": "Non Product DebitNote:Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnNonPrdDbn.R",
+      "description": "Non Product DebitNote:Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.cust.V",
+      "description": "View Customers Table"
+    },
+    {
+      "name": "$XSAPPNAME.cust.U",
+      "description": "Update Customers Table"
+    },
+    {
+      "name": "$XSAPPNAME.cust.DistU",
+      "description": "Update Distributor Customers Fields"
+    },
+    {
+      "name": "$XSAPPNAME.cust.HqU",
+      "description": "Update HQ Customer Fields"
+    },
+    {
+      "name": "$XSAPPNAME.custOptions.Update",
+      "description": "Update Customers Options Table"
+    },
+    {
+      "name": "$XSAPPNAME.custOptions.U",
+      "description": "Update Customers Options Table"
+    },
+    {
+      "name": "$XSAPPNAME.custHierarchy.A",
+      "description": "Approve Customers Hierarchy Table"
+    },
+    {
+      "name": "$XSAPPNAME.cust.A",
+      "description": "Approve New Customers Table"
+    },
+    {
+      "name": "$XSAPPNAME.route.V",
+      "description": "View route info"
+    },
+    {
+      "name": "$XSAPPNAME.route.U",
+      "description": "Update route info"
+    },
+    {
+      "name": "$XSAPPNAME.routeCoverage.V",
+      "description": "View route coverage info"
+    },
+    {
+      "name": "$XSAPPNAME.routeCoverage.U",
+      "description": "Update route coverage info"
+    },
+    {
+      "name": "$XSAPPNAME.routeTxnCtrl.V",
+      "description": "View route txn ctrl info"
+    },
+    {
+      "name": "$XSAPPNAME.routeTxnCtrl.U",
+      "description": "Update route txn ctrl info"
+    },
+    {
+      "name": "$XSAPPNAME.routeplan.V",
+      "description": "View route plan info"
+    },
+    {
+      "name": "$XSAPPNAME.routeplan.U",
+      "description": "Update route plan info"
+    },
+    {
+      "name": "$XSAPPNAME.prod.V",
+      "description": "View product info"
+    },
+    {
+      "name": "$XSAPPNAME.prod.U",
+      "description": "Update product info"
+    },
+    {
+      "name": "$XSAPPNAME.slsPerson.V",
+      "description": "View sale person info"
+    },
+    {
+      "name": "$XSAPPNAME.slsPerson.U",
+      "description": "Update sale person info"
+    },
+    {
+      "name": "$XSAPPNAME.txnOrd.V",
+      "description": "View sale order info"
+    },
+    {
+      "name": "$XSAPPNAME.txnOrd.U",
+      "description": "Update sale order info"
+    },
+    {
+      "name": "$XSAPPNAME.txnOrd.Process",
+      "description": "Process sale order info"
+    },
+    {
+      "name": "$XSAPPNAME.txnInv.V",
+      "description": "View invoice info"
+    },
+    {
+      "name": "$XSAPPNAME.txnInv.U",
+      "description": "Update invoice info"
+    },
+    {
+      "name": "$XSAPPNAME.txnInv.UOnly",
+      "description": "Only update invoice info"
+    },
+    {
+      "name": "$XSAPPNAME.txnInv.Deallocate",
+      "description": "deallocate invoice info"
+    },
+    {
+      "name": "$XSAPPNAME.txnRtn.V",
+      "description": "View return info"
+    },
+    {
+      "name": "$XSAPPNAME.txnRtn.U",
+      "description": "Update return info"
+    },
+    {
+      "name": "$XSAPPNAME.supplier.V",
+      "description": "View supplier master info"
+    },
+    {
+      "name": "$XSAPPNAME.supplier.U",
+      "description": "Update supplier master info"
+    },
+    {
+      "name": "$XSAPPNAME.gracePeriod.V",
+      "description": "View grace period info"
+    },
+    {
+      "name": "$XSAPPNAME.gracePeriod.U",
+      "description": "Update grace period info"
+    },
+    {
+      "name": "$XSAPPNAME.txnRtn.Process",
+      "description": "Process return info"
+    },
+    {
+      "name": "$XSAPPNAME.txnPrdCrn.V",
+      "description": "View product credit note info"
+    },
+    {
+      "name": "$XSAPPNAME.txnPrdCrn.U",
+      "description": "Update product credit note info"
+    },
+    {
+      "name": "$XSAPPNAME.txnPrdCrn.R",
+      "description": "Review product credit note info"
+    },
+    {
+      "name": "$XSAPPNAME.txnNonPrdCrn.V",
+      "description": "View non-product credit note info"
+    },
+    {
+      "name": "$XSAPPNAME.txnNonPrdCrn.U",
+      "description": "Update non-product credit note info"
+    },
+    {
+      "name": "$XSAPPNAME.txnNonPrdCrn.R",
+      "description": "Review non-product credit note info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataAgingTerms.V",
+      "description": "View aging terms info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataAgingTerms.U",
+      "description": "Update aging terms info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataInvTerms.V",
+      "description": "View invoice terms info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataInvTerms.U",
+      "description": "Update invoice terms info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataUOM.V",
+      "description": "View UOM info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataUOM.U",
+      "description": "Update UOM info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataVan.V",
+      "description": "View van info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataVan.U",
+      "description": "Update van info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataReason.V",
+      "description": "View reason info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataReason.U",
+      "description": "Update reason info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataReason.UOnly",
+      "description": "Only update reason info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtTaxDef.V",
+      "description": "View tax definition info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtTaxDef.U",
+      "description": "Update tax definition info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtTaxGrp.V",
+      "description": "View tax group info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtTaxGrp.U",
+      "description": "Update tax group info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtTaxStruct.V",
+      "description": "View tax structure info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtTaxStruct.U",
+      "description": "Update tax structure info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtState.V",
+      "description": "View tax state info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtState.U",
+      "description": "Update tax state info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtService.V",
+      "description": "View tax service master info"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtService.U",
+      "description": "Update tax service master info"
+    },
+    {
+      "name": "$XSAPPNAME.prodPrice.V",
+      "description": "View product price info"
+    },
+    {
+      "name": "$XSAPPNAME.prodPrice.U",
+      "description": "Update tax state info"
+    },
+    {
+      "name": "$XSAPPNAME.txnRouteSettlement.U",
+      "description": "Update Route Settlement"
+    },
+    {
+      "name": "$XSAPPNAME.txnRouteSettlement.V",
+      "description": "View Route Settlement List"
+    },
+    {
+      "name": "$XSAPPNAME.attributeCreation.V",
+      "description": "Attribute Creation View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.attributeCreation.U",
+      "description": "Attribute Creation Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.attributeValue.V",
+      "description": "Attribute Value Creation View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.attributeValue.U",
+      "description": "Attribute Value Creation Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.attributeMapping.V",
+      "description": "Attribute Mapping View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.attributeMapping.U",
+      "description": "Attribute Mapping Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconAttrMod.V",
+      "description": "Attribute Module View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconAttrMod.U",
+      "description": "Attribute Module Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconAttrAss.V",
+      "description": "Attribute Assign To View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconAttrAss.U",
+      "description": "Attribute Assign To Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconAttrUsage.V",
+      "description": "Attribute Usage View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconAttrUsage.U",
+      "description": "Attribute Usage Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsMaster.V",
+      "description": "Warehouse master View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsMaster.U",
+      "description": "Warehouse master Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsInventory.V",
+      "description": "Warehouse inventory View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkReceipt.V",
+      "description": "Warehouse stock receipt View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkReceipt.U",
+      "description": "Warehouse stock receipt Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkReceipt.UOnly",
+      "description": "Warehouse stock receipt update only Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkReceipt.R",
+      "description": "Warehouse stock receipt review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAdjust.V",
+      "description": "Warehouse stock adjustment View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAdjust.U",
+      "description": "Warehouse stock adjustment Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAdjust.A",
+      "description": "Warehouse stock adjustment approve Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAdjust.R",
+      "description": "Warehouse stock adjustment review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsTransfer.V",
+      "description": "Warehouse stock transfer View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsTransfer.U",
+      "description": "Warehouse stock transfer Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsTransfer.A",
+      "description": "Warehouse stock transfer approve Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsTransfer.R",
+      "description": "Warehouse stock transfer review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsBinTransfer.V",
+      "description": "Warehouse bin transfer View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsBinTransfer.U",
+      "description": "Warehouse bin transfer Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsBinTransfer.R",
+      "description": "Warehouse bin transfer review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAudit.V",
+      "description": "Warehouse stock audit View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAudit.U",
+      "description": "Warehouse stock audit Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAudit.A",
+      "description": "Warehouse stock audit approve Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAudit.R",
+      "description": "Warehouse stock audit review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAudit.OnHand",
+      "description": "Warehouse stock audit display onhand quantity Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkAudit.Var",
+      "description": "Warehouse stock audit Varience quantity Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkOut.V",
+      "description": "Warehouse stock out View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkOut.U",
+      "description": "Warehouse stock out Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsStkOut.A",
+      "description": "Warehouse stock out approve Permission"
+    },
+    {
+      "name": "$XSAPPNAME.defineHierStruct.V",
+      "description": "Hierarchy structure View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.defineHierStruct.U",
+      "description": "Hierarchy structure Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.prdCustHier.V",
+      "description": "Product Hierarchy structure View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.prdCustHier.U",
+      "description": "Product Hierarchy structure Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.geoHier.V",
+      "description": "GEO Hierarchy structure View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.geoHier.U",
+      "description": "GEO Hierarchy structure Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.geoHierSlsOff.U",
+      "description": "GEO Hierarchy sales office Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setLOB.V",
+      "description": "LOB View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setLOB.U",
+      "description": "LOB Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconHierRef.V",
+      "description": "Hierrchy reference View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.sysconHierRef.U",
+      "description": "hierarchy reference  Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnCollection.V",
+      "description": "Collection View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnCollection.U",
+      "description": "Collection Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnChqProcess.V",
+      "description": "Cheque Processing View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnChqProcess.U",
+      "description": "Cheque Processing Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.salesCal.V",
+      "description": "Sales Calendar View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.salesCal.U",
+      "description": "Sales Calendar Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.stepOfCall.V",
+      "description": "Step of call View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.stepOfCall.U",
+      "description": "Step of call Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setHoliday.V",
+      "description": "Holiday Calendar View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setHoliday.U",
+      "description": "Holiday Calendar Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdCrn.V",
+      "description": "Supplier Credit Note View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdCrn.U",
+      "description": "Supplier Credit Note Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdCrn.R",
+      "description": "Supplier Credit Note Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnPick.V",
+      "description": "PickList: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.txnPick.U",
+      "description": "PickList: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdCrn.V",
+      "description": "Supplier Non Product Credit Note :View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdCrn.U",
+      "description": "Supplier Non Product Credit Note :Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdCrn.UOnly",
+      "description": "Supplier Non Product Credit Note :Update Only Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdCrn.R",
+      "description": "Supplier Non Product Credit Note : Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdDbn.V",
+      "description": "Supplier Non Product Debit Note :View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdDbn.U",
+      "description": "Supplier Non Product Debit Note :Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdDbn.UOnly",
+      "description": "Supplier Non Product Debit Note :Update Only Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupNonPrdDbn.R",
+      "description": "Supplier Non Product Debit Note : Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtHSN.V",
+      "description": "HSN Master :View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.taxmgmtHSN.U",
+      "description": "HSN Master :Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.userInfo.V",
+      "description": "User Info: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setUser.V",
+      "description": "User setup: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setUser.U",
+      "description": "User Info: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setUser.A",
+      "description": "User Info: Approval Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setUser.Req",
+      "description": "User Info: Request Approval"
+    },
+    {
+      "name": "$XSAPPNAME.setUserGrp.V",
+      "description": "User Group: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setUserGrp.U",
+      "description": "User Group: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.setUserGrp.Ass",
+      "description": "User Group: Assign Permission"
+    },
+    {
+      "name": "$XSAPPNAME.CompInvoice.V",
+      "description": "Company Invoice:View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.CompInvoice.U",
+      "description": "Company Invoice:Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.CompInvoice.UOnly",
+      "description": "Company Invoice:Update Only Permission"
+    },
+    {
+      "name": "$XSAPPNAME.CompInvoice.R",
+      "description": "Company Invoice:Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdDbn.V",
+      "description": "Supplier  Product Debit Note :View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdDbn.U",
+      "description": "Supplier  Product Debit Note :Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdDbn.UOnly",
+      "description": "Supplier  Product Debit Note :Update Only Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupPrdDbn.R",
+      "description": "Supplier  Product Debit Note : Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.whsInventory.U",
+      "description": "Warehouse inventory Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.refdataMeasurementUnit.V",
+      "description": "Measurement Unit: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.refdataMeasurementUnit.U",
+      "description": "Measurement Unit: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.dynamicAddr.V",
+      "description": "Dynamic Address: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.dynamicAddr.U",
+      "description": "Dynamic Address: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.gdpr.U",
+      "description": "GDPR: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.custTransfer.V",
+      "description": "Customer Transfer View"
+    },
+    {
+      "name": "$XSAPPNAME.custTransfer.U",
+      "description": "Customer Transfer Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmAssignment.V",
+      "description": "POSM Assignment View"
+    },
+    {
+      "name": "$XSAPPNAME.posmAssignment.U",
+      "description": "POSM Assignment Update"
+    },
+    {
+      "name": "$XSAPPNAME.custTransfer.A",
+      "description": "Customer Transfer Approve/Confirm"
+    },
+    {
+      "name": "$XSAPPNAME.txnControl.V",
+      "description": "Configure Route Transaction Control View"
+    },
+    {
+      "name": "$XSAPPNAME.txnControl.U",
+      "description": "Configure Route Transaction Control Update"
+    },
+    {
+      "name": "$XSAPPNAME.featureSetup.V",
+      "description": "Feature Setup View"
+    },
+    {
+      "name": "$XSAPPNAME.featureSetup.U",
+      "description": "Feature Setup Update"
+    },
+    {
+      "name": "$XSAPPNAME.storeSpace.V",
+      "description": "Store Space View"
+    },
+    {
+      "name": "$XSAPPNAME.storeSpace.U",
+      "description": "Store Space Update"
+    },
+    {
+      "name": "$XSAPPNAME.storeSpaceLevel.V",
+      "description": "Store Space Level View"
+    },
+    {
+      "name": "$XSAPPNAME.storeSpaceLevel.U",
+      "description": "Store Space Level Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercProdGroup.V",
+      "description": "Merchandising product group View"
+    },
+    {
+      "name": "$XSAPPNAME.mercProdGroup.U",
+      "description": "Merchandising product group Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercPriceAudit.V",
+      "description": "Merchandising price audit View"
+    },
+    {
+      "name": "$XSAPPNAME.mercPriceAudit.U",
+      "description": "Merchandising price audit Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercFacingAudit.V",
+      "description": "Merchandising facing audit View"
+    },
+    {
+      "name": "$XSAPPNAME.mercFacingAudit.U",
+      "description": "Merchandising facing audit Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercDistCheck.V",
+      "description": "Merchandising dist check View"
+    },
+    {
+      "name": "$XSAPPNAME.mercDistCheck.U",
+      "description": "Merchandising dist check Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercPlanoAudit.V",
+      "description": "Merchandising planogram audit View"
+    },
+    {
+      "name": "$XSAPPNAME.mercPlanoAudit.U",
+      "description": "Merchandising planogram audit Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercRouteActivity.V",
+      "description": "Merchandising Route Activity Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercRouteActivity.U",
+      "description": "Merchandising Route Activity Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercTxn.V",
+      "description": "Merchandising transaction View"
+    },
+    {
+      "name": "$XSAPPNAME.mmDevProfile.V",
+      "description": "Mobile Manager Device Profile View"
+    },
+    {
+      "name": "$XSAPPNAME.mmDevSetting.V",
+      "description": "Mobile Manager Device Setting View"
+    },
+    {
+      "name": "$XSAPPNAME.mmDevInfo.V",
+      "description": "Mobile Manager Device Info View"
+    },
+    {
+      "name": "$XSAPPNAME.mmRelease.V",
+      "description": "Mobile Manager Release View"
+    },
+    {
+      "name": "$XSAPPNAME.mmLocale.V",
+      "description": "Mobile Manager Localization View"
+    },
+    {
+      "name": "$XSAPPNAME.mmInstr.V",
+      "description": "Mobile Manager Instruction View"
+    },
+    {
+      "name": "$XSAPPNAME.mmDevProfile.U",
+      "description": "Mobile Manager Device Profile Update"
+    },
+    {
+      "name": "$XSAPPNAME.mmDevSetting.U",
+      "description": "Mobile Manager Device Setting Update"
+    },
+    {
+      "name": "$XSAPPNAME.mmDevInfo.U",
+      "description": "Mobile Manager Device Info Update"
+    },
+    {
+      "name": "$XSAPPNAME.mmRelease.U",
+      "description": "Mobile Manager Release Update"
+    },
+    {
+      "name": "$XSAPPNAME.mmLocale.U",
+      "description": "Mobile Manager Localization Update"
+    },
+    {
+      "name": "$XSAPPNAME.mmInstr.U",
+      "description": "Mobile Manager Instruction Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmRequest.U",
+      "description": "POSM Request Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmRequest.A",
+      "description": "POSM Request Approval"
+    },
+    {
+      "name": "$XSAPPNAME.posmRequest.V",
+      "description": "POSM Request View"
+    },
+    {
+      "name": "$XSAPPNAME.posmInstallation.U",
+      "description": "POSM Installation Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmInstallation.A",
+      "description": "POSM Installation Approval"
+    },
+    {
+      "name": "$XSAPPNAME.posmInstallation.V",
+      "description": "POSM Installation View"
+    },
+    {
+      "name": "$XSAPPNAME.posmRemoval.U",
+      "description": "POSM Removal Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmRemoval.A",
+      "description": "POSM Removal Approval"
+    },
+    {
+      "name": "$XSAPPNAME.posmRemoval.V",
+      "description": "POSM Removal View"
+    },
+    {
+      "name": "$XSAPPNAME.posmRecording.U",
+      "description": "POSM Recording Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmRecording.A",
+      "description": "POSM Recording Approval"
+    },
+    {
+      "name": "$XSAPPNAME.posmRecording.V",
+      "description": "POSM Recording View"
+    },
+    {
+      "name": "$XSAPPNAME.posmApproval.U",
+      "description": "POSM Approval Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmApproval.A",
+      "description": "POSM Approval Approval"
+    },
+    {
+      "name": "$XSAPPNAME.posmApproval.V",
+      "description": "POSM Approval View"
+    },
+    {
+      "name": "$XSAPPNAME.posmDirectInstallation.U",
+      "description": "POSM Direct Installation Update"
+    },
+    {
+      "name": "$XSAPPNAME.posmDirectInstallation.V",
+      "description": "POSM Direct Installation View"
+    },
+    {
+      "name": "$XSAPPNAME.vmi.V",
+      "description": "VMI View"
+    },
+    {
+      "name": "$XSAPPNAME.vmi.U",
+      "description": "VMI Update"
+    },
+    {
+      "name": "$XSAPPNAME.vmi.A",
+      "description": "VMI Approve"
+    },
+    {
+      "name": "$XSAPPNAME.vmiReplenishment.V",
+      "description": "VMI Replenishment View"
+    },
+    {
+      "name": "$XSAPPNAME.vmiReplenishment.U",
+      "description": "VMI Replenishment Update"
+    },
+    {
+      "name": "$XSAPPNAME.vmiReplenishment.A",
+      "description": "VMI Replenishment Approve"
+    },
+    {
+      "name": "$XSAPPNAME.claim.U",
+      "description": "Claim Management Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.claim.V",
+      "description": "Claim Management View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.claim.Uonly",
+      "description": "Claim Management Update only Permission"
+    },
+    {
+      "name": "$XSAPPNAME.claim.A",
+      "description": "Claim Management Approval Permission"
+    },
+    {
+      "name": "$XSAPPNAME.claim.R",
+      "description": "Claim Management Review Permission"
+    },
+    {
+      "name": "$XSAPPNAME.scorecard.V",
+      "description": "Score Card View"
+    },
+    {
+      "name": "$XSAPPNAME.scorecard.U",
+      "description": "Score Card Update"
+    },
+    {
+      "name": "$XSAPPNAME.scorecard.Ass",
+      "description": "Score Card Assign"
+    },
+    {
+      "name": "$XSAPPNAME.kpitype.V",
+      "description": "KPI Type View"
+    },
+    {
+      "name": "$XSAPPNAME.kpitype.U",
+      "description": "KPI Type Update"
+    },
+    {
+      "name": "$XSAPPNAME.Audit.V",
+      "description": "Merc Audit View"
+    },
+    {
+      "name": "$XSAPPNAME.Audit.U",
+      "description": "Merc Audit Update"
+    },
+    {
+      "name": "$XSAPPNAME.ChecklistSetup.V",
+      "description": "Checklist View"
+    },
+    {
+      "name": "$XSAPPNAME.ChecklistSetup.U",
+      "description": "Checklist Update"
+    },
+    {
+      "name": "$XSAPPNAME.dynaSurvey.V",
+      "description": "Dynamic Survey View"
+    },
+    {
+      "name": "$XSAPPNAME.dynaSurvey.U",
+      "description": "Dynamic Survey Update"
+    },
+    {
+      "name": "$XSAPPNAME.mercPhotoSearch.V",
+      "description": "Merc Photo Search"
+    },
+    {
+      "name": "$XSAPPNAME.gamification.V",
+      "description": "Gamification View"
+    },
+    {
+      "name": "$XSAPPNAME.gamification.U",
+      "description": "Gamification Update"
+    },
+    {
+      "name": "$XSAPPNAME.gamification.Ass",
+      "description": "Gamification Assign"
+    },
+    {
+      "name": "$XSAPPNAME.distConfig.V",
+      "description": "View distributor Configuration info"
+    },
+    {
+      "name": "$XSAPPNAME.distConfig.U",
+      "description": "Update distributor Configuration info"
+    },
+    {
+      "name": "$XSAPPNAME.refdataAgingPeriod.V",
+      "description": "View Stock Take Aging Period"
+    },
+    {
+      "name": "$XSAPPNAME.refdataAgingPeriod.U",
+      "description": "Update Stock Take Aging Period"
+    },
+    {
+      "name": "$XSAPPNAME.SetLicMgmt.V",
+      "description": "License Management View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SetLicMgmt.U",
+      "description": "License Management Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SetLicMgmt.Ass",
+      "description": "License Management Ass Permission"
+    },
+    {
+      "name": "$XSAPPNAME.DeliveryRouteOpt.V",
+      "description": "Route Optimization View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.DeliveryRouteOpt.U",
+      "description": "Route Optimization Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.RouteWhsMapping.V",
+      "description": "Route Warehouse Mapping View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.RouteWhsMapping.U",
+      "description": "Route Warehouse Mapping Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.Ewallet.V",
+      "description": "Ewallet View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.Ewallet.U",
+      "description": "Ewallet Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SysConfig.U",
+      "description": "System Configuration Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.qcCheck.U",
+      "description": "Data Quality Check: Process and Retrieve results"
+    },
+    {
+      "name": "$XSAPPNAME.SupWrkPlanItem.V",
+      "description": "Supervisor Work Plan Item : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupWrkPlanItem.U",
+      "description": "Supervisor Work Plan Item : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupCheckList.V",
+      "description": "Supervisor  Check List : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupCheckList.U",
+      "description": "Supervisor  Check List : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupObjective.V",
+      "description": "Supervisor Objective : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupObjective.U",
+      "description": "Supervisor Objective : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupAuditCat.V",
+      "description": "Supervisor Audit Category : View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.SupAuditCat.U",
+      "description": "Supervisor Audit Category : Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetManufacturer.V",
+      "description": "Asset Manufacturer: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetManufacturer.U",
+      "description": "Asset Manufacturer: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetType.V",
+      "description": "Asset Type: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetType.U",
+      "description": "Asset Type: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetModel.V",
+      "description": "Asset Model: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetModel.U",
+      "description": "Asset Model: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetMaster.V",
+      "description": "Asset Master: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetMaster.U",
+      "description": "Asset Master: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetCondition.V",
+      "description": "Asset Condition: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetCondition.U",
+      "description": "Asset Condition: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetPrevMaint.V",
+      "description": "Asset Preventive Maintenance: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetPrevMaint.U",
+      "description": "Asset Preventive Maintenance: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetSpecialActivity.V",
+      "description": "Asset Special Activity: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetSpecialActivity.U",
+      "description": "Asset Special Activity: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetRepairFacility.V",
+      "description": "Asset Repair Facility: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetRepairFacility.U",
+      "description": "Asset Repair Facility: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetRepairReason.V",
+      "description": "Asset Repair Reason: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetRepairReason.U",
+      "description": "Asset Repair Reason: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetSparePart.V",
+      "description": "Asset Spare Part: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetSparePart.U",
+      "description": "Asset Spare Part: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetTfRea.V",
+      "description": "Asset Transfer Reason: View Permission"
+    },
+    {
+      "name": "$XSAPPNAME.assetTfRea.U",
+      "description": "Asset Transfer Reason: Update Permission"
+    },
+    {
+      "name": "$XSAPPNAME.refdataMessageType.V",
+      "description": "View Message Type"
+    },
+    {
+      "name": "$XSAPPNAME.refdataMessageType.U",
+      "description": "Update Message Type"
+    },
+	{
+      "name": "$XSAPPNAME.message.V",
+      "description": "View Message"
+    },
+    {
+      "name": "$XSAPPNAME.message.U",
+      "description": "Update Message"
+    },
+    {
+      "name": "$XSAPPNAME.message.Ass",
+      "description": "Assign Message"
+    },
+    {
+      "name": "$XSAPPNAME.refdataPlaybookType.V",
+      "description": "View Playbook Type"
+    },
+    {
+      "name": "$XSAPPNAME.refdataPlaybookType.U",
+      "description": "Update Playbook Type"
+    },
+	{
+      "name": "$XSAPPNAME.playbook.V",
+      "description": "View Playbook"
+    },
+    {
+      "name": "$XSAPPNAME.playbook.U",
+      "description": "Update Playbook"
+    },
+    {
+      "name": "$XSAPPNAME.playbook.Ass", 
+      "description": "Assign Playbook"
+  	},
+	{
+      "name": "$XSAPPNAME.playbook.View", 
+      "description": "View Playbook"
+ 	}
+  ],
+  "attributes": [
+    {
+      "name": "customAttribute1",
+      "description": "Custom Attribute 1",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute2",
+      "description": "Custom Attribute 2",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute3",
+      "description": "Custom Attribute 3",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute4",
+      "description": "Custom Attribute 4",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute5",
+      "description": "Custom Attribute 5",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute6",
+      "description": "Custom Attribute 6",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute7",
+      "description": "Custom Attribute 7",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute8",
+      "description": "Custom Attribute 8",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute9",
+      "description": "Custom Attribute 9",
+      "valueType": "string"
+    },
+    {
+      "name": "customAttribute10",
+      "description": "Custom Attribute 10",
+      "valueType": "string"
+    },
+    {
+      "name": "Groups",
+      "description": "Groups",
+      "valueType": "string"
+    },
+    {
+      "name": "uid",
+      "description": "IAS User ID",
+      "valueType": "string"
+    },
+    {
+      "name": "language",
+      "description": "Language",
+      "valueType": "string"
+    },
+    {
+      "name": "status",
+      "description": "User Status",
+      "valueType": "string"
+    },
+    {
+      "name": "passwordLoginTime",
+      "description": "Password Login Time",
+      "valueType": "date"
+    },
+    {
+      "name": "loginTime",
+      "description": "Last Log On",
+      "valueType": "date"
+    },
+    {
+      "name": "employee_number",
+      "description": "Employer Id",
+      "valueType": "string"
+    },
+    {
+      "name": "cost_center",
+      "description": "Cost Center",
+      "valueType": "string"
+    },
+    {
+      "name": "timezone",
+      "description": "Timezone",
+      "valueType": "string"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "NewsPageAccentureStaffRoleTemplate",
+      "description": "Basic Role Template assigned to all NewsPage users who are also Accenture empoyees. This determines whether they have access to internal product functions such as the tracing service.",
+      "scope-references": [
+        "$XSAPPNAME.systemTracingData.V",
+        "$XSAPPNAME.systemTracingData.U"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "AANewsPageUserRoleTemplate",
+      "description": "Basic Role Template assigned to all NewsPage users to retrieve their attributes",
+      "scope-references": [
+        "$XSAPPNAME.newspage"
+      ],
+      "attribute-references": [
+        "customAttribute1",
+        "customAttribute2",
+        "customAttribute3",
+        "customAttribute4",
+        "customAttribute5",
+        "customAttribute6",
+        "customAttribute7",
+        "customAttribute8",
+        "customAttribute9",
+        "customAttribute10",
+        "Groups",
+        "uid",
+        "language",
+        "status",
+        "passwordLoginTime",
+        "loginTime",
+        "employee_number",
+        "cost_center",
+        "timezone"
+      ]
+    },
+    {
+      "name": "UserInfoViewerRoleTemplate",
+      "description": "View user info role template",
+      "scope-references": [
+        "$XSAPPNAME.userInfo.V",
+        "$XSAPPNAME.setUserScope.V"
+      ]
+    },
+    {
+      "name": "UserViewerRoleTemplate",
+      "description": "View User role template",
+      "scope-references": [
+        "$XSAPPNAME.setUser.V"
+      ]
+    },
+    {
+      "name": "UserManagerRoleTemplate",
+      "description": "Maintain User role template",
+      "scope-references": [
+        "$XSAPPNAME.setUser.V",
+        "$XSAPPNAME.setUser.U"
+      ]
+    },
+    {
+      "name": "UserApprovalRoleTemplate",
+      "description": "Approve User template",
+      "scope-references": [
+        "$XSAPPNAME.setUser.V",
+        "$XSAPPNAME.setUser.U",
+        "$XSAPPNAME.setUser.A"
+      ]
+    },
+    {
+      "name": "UserRequestRoleTemplate",
+      "description": "Request Approval User template",
+      "scope-references": [
+        "$XSAPPNAME.setUser.V",
+        "$XSAPPNAME.setUser.U",
+        "$XSAPPNAME.setUser.Req"
+      ]
+    },
+    {
+      "name": "UserGroupViewerRoleTemplate",
+      "description": "View User Group Scope template",
+      "scope-references": [
+        "$XSAPPNAME.setUserGrp.V",
+        "$XSAPPNAME.setUserGrpScope.V"
+      ]
+    },
+    {
+      "name": "UserGroupManagerRoleTemplate",
+      "description": "Manage User Group Scope template",
+      "scope-references": [
+        "$XSAPPNAME.setUserGrp.V",
+        "$XSAPPNAME.setUserGrp.U",
+        "$XSAPPNAME.setUserGrpScope.V",
+        "$XSAPPNAME.setUserGrpScope.Ass"
+      ]
+    },
+    {
+      "name": "UserGroupAssignorRoleTemplate",
+      "description": "Manage User Group Scope template",
+      "scope-references": [
+        "$XSAPPNAME.setUserGrp.V",
+        "$XSAPPNAME.setUserGrp.Ass"
+      ]
+    },
+    {
+      "name": "DistViewerRoleTemplate",
+      "description": "View Distributor role template",
+      "scope-references": [
+        "$XSAPPNAME.dist.V"
+      ]
+    },
+    {
+      "name": "DistManagerRoleTemplate",
+      "description": "Maintain Distributor role template",
+      "scope-references": [
+        "$XSAPPNAME.dist.V",
+        "$XSAPPNAME.dist.U"
+      ]
+    },
+    {
+      "name": "DistTransNumViewerRoleTemplate",
+      "description": "View Distributor transaction number role template",
+      "scope-references": [
+        "$XSAPPNAME.distTransNum.V"
+      ]
+    },
+    {
+      "name": "DistTransNumManagerRoleTemplate",
+      "description": "Maintain Distributor transaction number role template",
+      "scope-references": [
+        "$XSAPPNAME.distTransNum.V",
+        "$XSAPPNAME.distTransNum.U"
+      ]
+    },
+    {
+      "name": "RouteViewerRoleTemplate",
+      "description": "View Route role template",
+      "scope-references": [
+        "$XSAPPNAME.route.V",
+        "$XSAPPNAME.routeCoverage.V",
+        "$XSAPPNAME.routeTxnCtrl.V",
+        "$XSAPPNAME.routeplan.V",
+        "$XSAPPNAME.slsPerson.V"
+      ]
+    },
+    {
+      "name": "RouteManagerRoleTemplate",
+      "description": "Maintain Route role template",
+      "scope-references": [
+        "$XSAPPNAME.route.V",
+        "$XSAPPNAME.route.U",
+        "$XSAPPNAME.routeCoverage.V",
+        "$XSAPPNAME.routeCoverage.U",
+        "$XSAPPNAME.routeTxnCtrl.V",
+        "$XSAPPNAME.routeTxnCtrl.U",
+        "$XSAPPNAME.routeplan.V",
+        "$XSAPPNAME.routeplan.U",
+        "$XSAPPNAME.slsPerson.U",
+        "$XSAPPNAME.slsPerson.V"
+      ]
+    },
+    {
+      "name": "DistOptionsManagerRoleTemplate",
+      "description": "Maintain Distributor options role template",
+      "scope-references": [
+        "$XSAPPNAME.distOptions.U"
+      ]
+    },
+    {
+      "name": "MetadataViewerRoleTemplate",
+      "description": "View metadata role template",
+      "scope-references": [
+        "$XSAPPNAME.metaData.V",
+        "$XSAPPNAME.moduleData.V",
+        "$XSAPPNAME.menuData.V",
+        "$XSAPPNAME.moduleData.U"
+      ]
+    },
+    {
+      "name": "MetadataManagerRoleTemplate",
+      "description": "Maintain metadata role template",
+      "scope-references": [
+        "$XSAPPNAME.metaData.V",
+        "$XSAPPNAME.moduleData.V",
+        "$XSAPPNAME.menuData.V",
+        "$XSAPPNAME.metaData.U",
+        "$XSAPPNAME.moduleData.U",
+        "$XSAPPNAME.menuData.U"
+      ]
+    },
+    {
+      "name": "ProdSectorViewerRoleTemplate",
+      "description": "Maintain product sector role template",
+      "scope-references": [
+        "$XSAPPNAME.prodSector.V"
+      ]
+    },
+    {
+      "name": "ProdSectorManagerRoleTemplate",
+      "description": "Maintain product sector role template",
+      "scope-references": [
+        "$XSAPPNAME.prodSector.V",
+        "$XSAPPNAME.prodSector.U"
+      ]
+    },
+    {
+      "name": "ProdViewerRoleTemplate",
+      "description": "Maintain product role template",
+      "scope-references": [
+        "$XSAPPNAME.prod.V"
+      ]
+    },
+    {
+      "name": "ProdManagerRoleTemplate",
+      "description": "Maintain product manager role template",
+      "scope-references": [
+        "$XSAPPNAME.prod.V",
+        "$XSAPPNAME.prod.U"
+      ]
+    },
+    {
+      "name": "RefDataBankViewerRoleTemplate",
+      "description": "View bank role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataBank.V"
+      ]
+    },
+    {
+      "name": "RefDataBankManagerRoleTemplate",
+      "description": "Maintain bank role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataBank.V",
+        "$XSAPPNAME.refdataBank.U"
+      ]
+    },
+    {
+      "name": "RefDataQCManagerRoleTemplate",
+      "description": "Maintain quality check role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataQC.V",
+        "$XSAPPNAME.refdataQC.U"
+      ]
+    },
+    {
+      "name": "RefDataQCViewerRoleTemplate",
+      "description": "View quality check role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataQC.V"
+      ]
+    },
+    {
+      "name": "ObjectStoreViewerRoleTemplate",
+      "description": "View objectstore role template",
+      "scope-references": [
+        "$XSAPPNAME.objectstore.V"
+      ]
+    },
+    {
+      "name": "ObjectStoreManagerRoleTemplate",
+      "description": "Maintain objectstore role template",
+      "scope-references": [
+        "$XSAPPNAME.objectstore.V",
+        "$XSAPPNAME.objectstore.U"
+      ]
+    },
+    {
+      "name": "CommServiceViewerRoleTemplate",
+      "description": "View commservice role template",
+      "scope-references": [
+        "$XSAPPNAME.commservice.View"
+      ]
+    },
+    {
+      "name": "CommServiceManagerRoleTemplate",
+      "description": "Maintain commservice role template",
+      "scope-references": [
+        "$XSAPPNAME.commservice.View",
+        "$XSAPPNAME.commservice.Update"
+      ]
+    },
+    {
+      "name": "PromoViewerRoleTemplate",
+      "description": "View Promotion template",
+      "scope-references": [
+        "$XSAPPNAME.promo.V",
+        "$XSAPPNAME.promoPriority.V"
+      ]
+    },
+    {
+      "name": "PromoManagerRoleTemplate",
+      "description": "Maintain Promotion template",
+      "scope-references": [
+        "$XSAPPNAME.promo.V",
+        "$XSAPPNAME.promo.U",
+        "$XSAPPNAME.promo.Ass"
+      ]
+    },
+    {
+      "name": "PromoApproverRoleTemplate",
+      "description": "Approval Promotion template",
+      "scope-references": [
+        "$XSAPPNAME.promo.A"
+      ]
+    },
+    {
+      "name": "PromoPriorityManagerRoleTemplate",
+      "description": "Maintain Promotion Priority template",
+      "scope-references": [
+        "$XSAPPNAME.promoPriority.V",
+        "$XSAPPNAME.promoPriority.U"
+      ]
+    },
+    {
+      "name": "CustRebateViewerRoleTemplate",
+      "description": "View Customer Rebate template",
+      "scope-references": [
+        "$XSAPPNAME.custRebate.V"
+      ]
+    },
+    {
+      "name": "CustRebateManagerRoleTemplate",
+      "description": "Maintain Customer Rebate template",
+      "scope-references": [
+        "$XSAPPNAME.custRebate.V",
+        "$XSAPPNAME.custRebate.U"
+      ]
+    },
+    {
+      "name": "CustRebateApproverRoleTemplate",
+      "description": "Approval Customer Rebate template",
+      "scope-references": [
+        "$XSAPPNAME.custRebate.A"
+      ]
+    },
+    {
+      "name": "RefDataClaimTypeViewerRoleTemplate",
+      "description": "View Claim Type template",
+      "scope-references": [
+        "$XSAPPNAME.refdataClaimType.V"
+      ]
+    },
+    {
+      "name": "RefDataClaimTypeManagerRoleTemplate",
+      "description": "Maintain Claim Type template",
+      "scope-references": [
+        "$XSAPPNAME.refdataClaimType.V",
+        "$XSAPPNAME.refdataClaimType.U"
+      ]
+    },
+    {
+      "name": "PerformanceUploadViewerRoleTemplate",
+      "description": "View Performance Upload",
+      "scope-references": [
+        "$XSAPPNAME.perfMgmtUpload.V"
+      ]
+    },
+    {
+      "name": "PerformanceUploadManagerRoleTemplate",
+      "description": "Maintain Performance Upload",
+      "scope-references": [
+        "$XSAPPNAME.perfMgmtUpload.V",
+        "$XSAPPNAME.perfMgmtUpload.U"
+      ]
+    },
+    {
+      "name": "ApplicationSettingViewerRoleTemplate",
+      "description": "View Application Setting",
+      "scope-references": [
+        "$XSAPPNAME.appSetting.V"
+      ]
+    },
+    {
+      "name": "ApplicationSettingManagerRoleTemplate",
+      "description": "Maintain Application Setting",
+      "scope-references": [
+        "$XSAPPNAME.appSetting.V",
+        "$XSAPPNAME.appSetting.U"
+      ]
+    },
+    {
+      "name": "ApplicationSetupViewerRoleTemplate",
+      "description": "View Application Setup",
+      "scope-references": [
+        "$XSAPPNAME.appSetup.V"
+      ]
+    },
+    {
+      "name": "ApplicationSetupManagerRoleTemplate",
+      "description": "Maintain Application Setup",
+      "scope-references": [
+        "$XSAPPNAME.appSetup.V",
+        "$XSAPPNAME.appSetup.U"
+      ]
+    },
+    {
+      "name": "ApplicationSetupMainManagerRoleTemplate",
+      "description": "Maintain Application Setup Main",
+      "scope-references": [
+        "$XSAPPNAME.appSetupMain.V",
+        "$XSAPPNAME.appSetupMain.U"
+      ]
+    },
+    {
+      "name": "ReportSetupViewerRoleTemplate",
+      "description": "View Report Template",
+      "scope-references": [
+        "$XSAPPNAME.rptTemp.V",
+        "$XSAPPNAME.rptParam.V",
+        "$XSAPPNAME.rptModuleSetup.V"
+      ]
+    },
+    {
+      "name": "ReportSetupManagerRoleTemplate",
+      "description": "Maintain Report Template",
+      "scope-references": [
+        "$XSAPPNAME.rptTemp.V",
+        "$XSAPPNAME.rptParam.V",
+        "$XSAPPNAME.rptModuleSetup.V",
+        "$XSAPPNAME.rptTemp.U",
+        "$XSAPPNAME.rptParam.U",
+        "$XSAPPNAME.rptModuleSetup.U"
+      ]
+    },
+    {
+      "name": "ReportGenerateViewerRoleTemplate",
+      "description": "View Generate Report",
+      "scope-references": [
+        "$XSAPPNAME.rptGenData.V"
+      ]
+    },
+    {
+      "name": "VanInventoryActivityViewerRoleTemplate",
+      "description": "View Van inventory role template",
+      "scope-references": [
+        "$XSAPPNAME.vanStkReq.V",
+        "$XSAPPNAME.vanStkRep.V",
+        "$XSAPPNAME.vanStkOut.V",
+        "$XSAPPNAME.vanStkIn.V",
+        "$XSAPPNAME.vanSktDamage.V",
+        "$XSAPPNAME.vanSktCount.V"
+      ]
+    },
+    {
+      "name": "VanInventoryActivityManagerRoleTemplate",
+      "description": "View Van inventory manager role template",
+      "scope-references": [
+        "$XSAPPNAME.vanStkReq.V",
+        "$XSAPPNAME.vanStkRep.V",
+        "$XSAPPNAME.vanStkOut.V",
+        "$XSAPPNAME.vanStkIn.V",
+        "$XSAPPNAME.vanSktDamage.V",
+        "$XSAPPNAME.vanSktCount.V",
+        "$XSAPPNAME.vanStkReq.U",
+        "$XSAPPNAME.vanStkRep.U",
+        "$XSAPPNAME.vanStkOut.U"
+      ]
+    },
+    {
+      "name": "MSLViewerRoleTemplate",
+      "description": "View Must Sell List role template",
+      "scope-references": [
+        "$XSAPPNAME.perfMgmtMSL.V"
+      ]
+    },
+    {
+      "name": "MSLManagerRoleTemplate",
+      "description": "Update Must Sell List role template",
+      "scope-references": [
+        "$XSAPPNAME.perfMgmtMSL.V",
+        "$XSAPPNAME.perfMgmtMSL.U"
+      ]
+    },
+    {
+      "name": "MSLAssignorRoleTemplate",
+      "description": "Assign Must Sell List role template",
+      "scope-references": [
+        "$XSAPPNAME.perfMgmtMSL.V",
+        "$XSAPPNAME.perfMgmtMSL.Ass"
+      ]
+    },
+    {
+      "name": "CodeTableViewerRoleTemplate",
+      "description": "View Code Table role template",
+      "scope-references": [
+        "$XSAPPNAME.codetable.View"
+      ]
+    },
+    {
+      "name": "CustViewerRoleTemplate",
+      "description": "View Customer role template",
+      "scope-references": [
+        "$XSAPPNAME.cust.V"
+      ]
+    },
+    {
+      "name": "CustManagerRoleTemplate",
+      "description": "Maintain Customer role template",
+      "scope-references": [
+        "$XSAPPNAME.cust.V",
+        "$XSAPPNAME.cust.U",
+        "$XSAPPNAME.cust.DistU"
+      ]
+    },
+    {
+      "name": "CustReviewerRoleTemplate",
+      "description": "Review Customer role template",
+      "scope-references": [
+        "$XSAPPNAME.cust.V",
+        "$XSAPPNAME.cust.U",
+        "$XSAPPNAME.cust.HqU"
+      ]
+    },
+    {
+      "name": "CustOptionsManagerRoleTemplate",
+      "description": "Maintain Customer Options role template",
+      "scope-references": [
+        "$XSAPPNAME.custOptions.U",
+        "$XSAPPNAME.custOptions.Update"
+      ]
+    },
+    {
+      "name": "CustApproverRoleTemplate",
+      "description": "Approve Customer Hierarchy role template",
+      "scope-references": [
+        "$XSAPPNAME.custHierarchy.A"
+      ]
+    },
+    {
+      "name": "NewCustApproverRoleTemplate",
+      "description": "Approve New Customer role template",
+      "scope-references": [
+        "$XSAPPNAME.cust.A"
+      ]
+    },
+    {
+      "name": "RefDataAgingTermsViewerRoleTemplate",
+      "description": "View aging terms role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataAgingTerms.V"
+      ]
+    },
+    {
+      "name": "RefDataAgingTermsManagerRoleTemplate",
+      "description": "Update aging terms role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataAgingTerms.V",
+        "$XSAPPNAME.refdataAgingTerms.U"
+      ]
+    },
+    {
+      "name": "RefDataInvoiceTermsViewerRoleTemplate",
+      "description": "View invoice terms role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataInvTerms.V"
+      ]
+    },
+    {
+      "name": "RefDataInvoiceTermManagerRoleTemplate",
+      "description": "Maintain invoice terms role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataInvTerms.V",
+        "$XSAPPNAME.refdataInvTerms.U"
+      ]
+    },
+    {
+      "name": "RefDataUOMViewerRoleTemplate",
+      "description": "View UOM role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataUOM.V"
+      ]
+    },
+    {
+      "name": "RefDataUOMManagerRoleTemplate",
+      "description": "Maintain UOM role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataUOM.V",
+        "$XSAPPNAME.refdataUOM.U"
+      ]
+    },
+    {
+      "name": "RefDataVanViewerRoleTemplate",
+      "description": "View van role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataVan.V"
+      ]
+    },
+    {
+      "name": "RefDataVanManagerRoleTemplate",
+      "description": "Maintain van role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataVan.V",
+        "$XSAPPNAME.refdataVan.U"
+      ]
+    },
+    {
+      "name": "RefDataReasonViewerRoleTemplate",
+      "description": "View reason role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataReason.V"
+      ]
+    },
+    {
+      "name": "RefDataReasonManagerRoleTemplate",
+      "description": "Maintain reason manager role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataReason.V",
+        "$XSAPPNAME.refdataReason.U"
+      ]
+    },
+    {
+      "name": "RefDataMeasurementUnitViewerRoleTemplate",
+      "description": "View measurement unit role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataMeasurementUnit.V"
+      ]
+    },
+    {
+      "name": "RefDataMeasurementUnitManagerRoleTemplate",
+      "description": "Maintain measurement unit role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataMeasurementUnit.V",
+        "$XSAPPNAME.refdataMeasurementUnit.U"
+      ]
+    },
+    {
+      "name": "RefDataReasonWHMappingManagerRoleTemplate",
+      "description": "Update van manager role template",
+      "scope-references": [
+        "$XSAPPNAME.refdataReason.UOnly"
+      ]
+    },
+    {
+      "name": "TaxManagementViewerRoleTemplate",
+      "description": "View tax role template",
+      "scope-references": [
+        "$XSAPPNAME.taxmgmtTaxDef.V",
+        "$XSAPPNAME.taxmgmtTaxGrp.V",
+        "$XSAPPNAME.taxmgmtTaxStruct.V",
+        "$XSAPPNAME.taxmgmtState.V",
+        "$XSAPPNAME.taxmgmtHSN.V",
+        "$XSAPPNAME.taxmgmtService.V"
+      ]
+    },
+    {
+      "name": "TaxManagementManagerRoleTemplate",
+      "description": "Maintain tax manager role template",
+      "scope-references": [
+        "$XSAPPNAME.taxmgmtTaxDef.V",
+        "$XSAPPNAME.taxmgmtTaxGrp.V",
+        "$XSAPPNAME.taxmgmtTaxStruct.V",
+        "$XSAPPNAME.taxmgmtState.V",
+        "$XSAPPNAME.taxmgmtTaxDef.U",
+        "$XSAPPNAME.taxmgmtTaxGrp.U",
+        "$XSAPPNAME.taxmgmtTaxStruct.U",
+        "$XSAPPNAME.taxmgmtState.U",
+        "$XSAPPNAME.taxmgmtHSN.V",
+        "$XSAPPNAME.taxmgmtHSN.U",
+        "$XSAPPNAME.taxmgmtService.V",
+        "$XSAPPNAME.taxmgmtService.U"
+      ]
+    },
+    {
+      "name": "ProdPriceViewerRoleTemplate",
+      "description": "View product price role template",
+      "scope-references": [
+        "$XSAPPNAME.prodPrice.V"
+      ]
+    },
+    {
+      "name": "ProdPriceManagerRoleTemplate",
+      "description": "Maintain product price role template",
+      "scope-references": [
+        "$XSAPPNAME.prodPrice.V",
+        "$XSAPPNAME.prodPrice.U"
+      ]
+    },
+    {
+      "name": "CustomerTransActivityViewerRoleTemplate",
+      "description": "View customer transaction activity role template",
+      "scope-references": [
+        "$XSAPPNAME.txnOrd.V",
+        "$XSAPPNAME.txnInv.V",
+        "$XSAPPNAME.txnRtn.V",
+        "$XSAPPNAME.txnPrdCrn.V",
+        "$XSAPPNAME.txnNonPrdCrn.V",
+        "$XSAPPNAME.txnPrdDbn.V",
+        "$XSAPPNAME.txnNonPrdDbn.V",
+        "$XSAPPNAME.txnRouteSettlement.V",
+        "$XSAPPNAME.txnCollection.V",
+        "$XSAPPNAME.txnChqProcess.V",
+        "$XSAPPNAME.txnPick.V"
+      ]
+    },
+    {
+      "name": "CustomerTransActivityManagerRoleTemplate",
+      "description": "Maintain customer transaction activity role template",
+      "scope-references": [
+        "$XSAPPNAME.txnOrd.V",
+        "$XSAPPNAME.txnInv.V",
+        "$XSAPPNAME.txnRtn.V",
+        "$XSAPPNAME.txnPrdCrn.V",
+        "$XSAPPNAME.txnNonPrdCrn.V",
+        "$XSAPPNAME.txnPrdDbn.V",
+        "$XSAPPNAME.txnNonPrdDbn.V",
+        "$XSAPPNAME.txnOrd.U",
+        "$XSAPPNAME.txnInv.U",
+        "$XSAPPNAME.txnRtn.U",
+        "$XSAPPNAME.txnPrdCrn.U",
+        "$XSAPPNAME.txnNonPrdCrn.U",
+        "$XSAPPNAME.txnPrdDbn.U",
+        "$XSAPPNAME.txnNonPrdDbn.U",
+        "$XSAPPNAME.txnInv.Deallocate",
+        "$XSAPPNAME.txnRouteSettlement.V",
+        "$XSAPPNAME.txnRouteSettlement.U",
+        "$XSAPPNAME.txnCollection.U",
+        "$XSAPPNAME.txnCollection.V",
+        "$XSAPPNAME.txnChqProcess.V",
+        "$XSAPPNAME.txnChqProcess.U",
+        "$XSAPPNAME.txnPick.V",
+        "$XSAPPNAME.txnPick.U"
+      ]
+    },
+    {
+      "name": "CustomerTransActivityReviwerRoleTemplate",
+      "description": "Review customer transaction activity role template",
+      "scope-references": [
+        "$XSAPPNAME.txnOrd.Process",
+        "$XSAPPNAME.txnRtn.Process",
+        "$XSAPPNAME.txnPrdCrn.R",
+        "$XSAPPNAME.txnNonPrdCrn.R",
+        "$XSAPPNAME.txnPrdDbn.R",
+        "$XSAPPNAME.txnNonPrdDbn.R"
+      ]
+    },
+    {
+      "name": "AttributeModuleViewerRoleTemplate",
+      "description": "View Attribute module",
+      "scope-references": [
+        "$XSAPPNAME.sysconAttrMod.V"
+      ]
+    },
+    {
+      "name": "AttributeModuleManagerRoleTemplate",
+      "description": "Manage Attribute module",
+      "scope-references": [
+        "$XSAPPNAME.sysconAttrMod.V",
+        "$XSAPPNAME.sysconAttrMod.U"
+      ]
+    },
+    {
+      "name": "AttributeAssignToViewerRoleTemplate",
+      "description": "View assigned Attributes",
+      "scope-references": [
+        "$XSAPPNAME.sysconAttrAss.V"
+      ]
+    },
+    {
+      "name": "AttributeAssignToManagerRoleTemplate",
+      "description": "Manage Attribute assignment",
+      "scope-references": [
+        "$XSAPPNAME.sysconAttrAss.V",
+        "$XSAPPNAME.sysconAttrAss.U"
+      ]
+    },
+    {
+      "name": "AttributeUsageViewerRoleTemplate",
+      "description": "View assigned usage",
+      "scope-references": [
+        "$XSAPPNAME.sysconAttrUsage.V"
+      ]
+    },
+    {
+      "name": "AttributeUsageManagerRoleTemplate",
+      "description": "Manage Attribute usage",
+      "scope-references": [
+        "$XSAPPNAME.sysconAttrUsage.V",
+        "$XSAPPNAME.sysconAttrUsage.U"
+      ]
+    },
+    {
+      "name": "AttributeViewerRoleTemplate",
+      "description": "View created Attributes/ value/ mapping",
+      "scope-references": [
+        "$XSAPPNAME.attributeCreation.V",
+        "$XSAPPNAME.attributeValue.V",
+        "$XSAPPNAME.attributeMapping.V"
+      ]
+    },
+    {
+      "name": "AttributeManagerRoleTemplate",
+      "description": "Manage Attribute ",
+      "scope-references": [
+        "$XSAPPNAME.attributeCreation.V",
+        "$XSAPPNAME.attributeCreation.U",
+        "$XSAPPNAME.attributeValue.V",
+        "$XSAPPNAME.attributeValue.U",
+        "$XSAPPNAME.attributeMapping.V",
+        "$XSAPPNAME.attributeMapping.U"
+      ]
+    },
+    {
+      "name": "WarehouseViewerRoleTemplate",
+      "description": "Warehouse view",
+      "scope-references": [
+        "$XSAPPNAME.whsMaster.V"
+      ]
+    },
+    {
+      "name": "WarehouseManagerRoleTemplate",
+      "description": "Warehouse mange",
+      "scope-references": [
+        "$XSAPPNAME.whsMaster.V",
+        "$XSAPPNAME.whsMaster.U"
+      ]
+    },
+    {
+      "name": "WarehouseActivityViewerRoleTemplate",
+      "description": "Warehouse inventory view",
+      "scope-references": [
+        "$XSAPPNAME.whsInventory.V",
+        "$XSAPPNAME.whsStkReceipt.V",
+        "$XSAPPNAME.whsStkAdjust.V",
+        "$XSAPPNAME.whsTransfer.V",
+        "$XSAPPNAME.whsBinTransfer.V",
+        "$XSAPPNAME.whsStkAudit.V",
+        "$XSAPPNAME.whsStkOut.V"
+      ]
+    },
+    {
+      "name": "WarehouseActivityManagerRoleTemplate",
+      "description": "Warehouse inventory manage",
+      "scope-references": [
+        "$XSAPPNAME.whsInventory.V",
+        "$XSAPPNAME.whsStkReceipt.V",
+        "$XSAPPNAME.whsStkAdjust.V",
+        "$XSAPPNAME.whsTransfer.V",
+        "$XSAPPNAME.whsBinTransfer.V",
+        "$XSAPPNAME.whsStkAudit.V",
+        "$XSAPPNAME.whsStkOut.V",
+        "$XSAPPNAME.whsStkReceipt.U",
+        "$XSAPPNAME.whsStkAdjust.U",
+        "$XSAPPNAME.whsTransfer.U",
+        "$XSAPPNAME.whsBinTransfer.U",
+        "$XSAPPNAME.whsStkAudit.U",
+        "$XSAPPNAME.whsStkOut.U",
+        "$XSAPPNAME.whsInventory.U"
+      ]
+    },
+    {
+      "name": "WarehouseActivityReviewerRoleTemplate",
+      "description": "Warehouse inventory Review",
+      "scope-references": [
+        "$XSAPPNAME.whsStkReceipt.R",
+        "$XSAPPNAME.whsStkAdjust.R",
+        "$XSAPPNAME.whsTransfer.R",
+        "$XSAPPNAME.whsBinTransfer.R",
+        "$XSAPPNAME.whsStkAudit.R",
+        "$XSAPPNAME.whsInventory.U",
+        "$XSAPPNAME.whsInventory.V"
+      ]
+    },
+    {
+      "name": "WarehouseActivityApproverRoleTemplate",
+      "description": "Warehouse inventory Approve",
+      "scope-references": [
+        "$XSAPPNAME.whsStkAdjust.V",
+        "$XSAPPNAME.whsStkAdjust.A",
+        "$XSAPPNAME.whsStkOut.V",
+        "$XSAPPNAME.whsStkOut.A",
+        "$XSAPPNAME.whsStkAudit.V",
+        "$XSAPPNAME.whsStkAudit.A",
+        "$XSAPPNAME.whsInventory.U",
+        "$XSAPPNAME.whsInventory.V"
+      ]
+    },
+    {
+      "name": "WarehouseActivityHQViewerRoleTemplate",
+      "description": "Warehouse Activity Viewer",
+      "scope-references": [
+        "$XSAPPNAME.whsStkAudit.V",
+        "$XSAPPNAME.whsStkAdjust.V",
+        "$XSAPPNAME.whsStkOut.V"
+      ]
+    },
+    {
+      "name": "DynamicHierarchyViewerRoleTemplate",
+      "description": "Dynamic hierarchy view",
+      "scope-references": [
+        "$XSAPPNAME.defineHierStruct.V",
+        "$XSAPPNAME.prdCustHier.V",
+        "$XSAPPNAME.geoHier.V"
+      ]
+    },
+    {
+      "name": "DynamicHierarchyManagerRoleTemplate",
+      "description": "Dynamic hierarchy manage",
+      "scope-references": [
+        "$XSAPPNAME.defineHierStruct.V",
+        "$XSAPPNAME.prdCustHier.V",
+        "$XSAPPNAME.geoHier.V",
+        "$XSAPPNAME.defineHierStruct.U",
+        "$XSAPPNAME.prdCustHier.U",
+        "$XSAPPNAME.geoHier.U",
+        "$XSAPPNAME.geoHierSlsOff.U"
+      ]
+    },
+    {
+      "name": "HierarchyRefViewerRoleTemplate",
+      "description": "Hierarchy View",
+      "scope-references": [
+        "$XSAPPNAME.sysconHierRef.V"
+      ]
+    },
+    {
+      "name": "HierarchyRefManagerRoleTemplate",
+      "description": "Hierarchy View",
+      "scope-references": [
+        "$XSAPPNAME.sysconHierRef.V",
+        "$XSAPPNAME.sysconHierRef.U"
+      ]
+    },
+    {
+      "name": "LOBViewerRoleTemplate",
+      "description": "LOB View",
+      "scope-references": [
+        "$XSAPPNAME.setLOB.V"
+      ]
+    },
+    {
+      "name": "LOBManagerRoleTemplate",
+      "description": "LOB manage",
+      "scope-references": [
+        "$XSAPPNAME.setLOB.V",
+        "$XSAPPNAME.setLOB.U"
+      ]
+    },
+    {
+      "name": "HolidayViewerRoleTemplate",
+      "description": "Holiday Calendar View",
+      "scope-references": [
+        "$XSAPPNAME.setHoliday.V"
+      ]
+    },
+    {
+      "name": "HolidayManagerRoleTemplate",
+      "description": "Holiday Calendar manage",
+      "scope-references": [
+        "$XSAPPNAME.setHoliday.V",
+        "$XSAPPNAME.setHoliday.U"
+      ]
+    },
+    {
+      "name": "StepOfCallViewerRoleTemplate",
+      "description": "Step of Call View",
+      "scope-references": [
+        "$XSAPPNAME.stepOfCall.V"
+      ]
+    },
+    {
+      "name": "StepOfCallManagerRoleTemplate",
+      "description": "Step of Call manage",
+      "scope-references": [
+        "$XSAPPNAME.stepOfCall.V",
+        "$XSAPPNAME.stepOfCall.U"
+      ]
+    },
+    {
+      "name": "SalesCalendarViewerRoleTemplate",
+      "description": "Sales Calendar View",
+      "scope-references": [
+        "$XSAPPNAME.salesCal.V"
+      ]
+    },
+    {
+      "name": "SalesCalendarManagerRoleTemplate",
+      "description": "Sales Calendar manage",
+      "scope-references": [
+        "$XSAPPNAME.salesCal.V",
+        "$XSAPPNAME.salesCal.U"
+      ]
+    },
+    {
+      "name": "CompanyTransActivityViewerRoleTemplate",
+      "description": "Company Transaction View",
+      "scope-references": [
+        "$XSAPPNAME.SupPrdCrn.V",
+        "$XSAPPNAME.SupNonPrdCrn.V",
+        "$XSAPPNAME.SupNonPrdDbn.V",
+        "$XSAPPNAME.SupPrdDbn.V",
+        "$XSAPPNAME.CompInvoice.V"
+      ]
+    },
+    {
+      "name": "CompanyTransActivityManagerRoleTemplate",
+      "description": "Company Transaction manage",
+      "scope-references": [
+        "$XSAPPNAME.SupPrdCrn.V",
+        "$XSAPPNAME.SupPrdCrn.U",
+        "$XSAPPNAME.SupNonPrdCrn.V",
+        "$XSAPPNAME.SupNonPrdCrn.U",
+        "$XSAPPNAME.SupNonPrdDbn.V",
+        "$XSAPPNAME.SupNonPrdDbn.U",
+        "$XSAPPNAME.SupPrdDbn.V",
+        "$XSAPPNAME.SupPrdDbn.U",
+        "$XSAPPNAME.SupPrdDbn.UOnly",
+        "$XSAPPNAME.CompInvoice.V",
+        "$XSAPPNAME.CompInvoice.U",
+        "$XSAPPNAME.CompInvoice.UOnly"
+      ]
+    },
+    {
+      "name": "CompanyTransActivityReviewerRoleTemplate",
+      "description": "Company Transaction review",
+      "scope-references": [
+        "$XSAPPNAME.SupNonPrdCrn.R",
+        "$XSAPPNAME.SupNonPrdDbn.R",
+        "$XSAPPNAME.SupPrdDbn.R",
+        "$XSAPPNAME.SupPrdCrn.R",
+        "$XSAPPNAME.CompInvoice.R"
+      ]
+    },
+    {
+      "name": "UserInfoViewerRoleTemplate",
+      "description": "User info View",
+      "scope-references": [
+        "$XSAPPNAME.userInfo.V"
+      ]
+    },
+    {
+      "name": "UserViewerRoleTemplate",
+      "description": "User Setup View Role",
+      "scope-references": [
+        "$XSAPPNAME.setUser.V"
+      ]
+    },
+    {
+      "name": "UserManagerRoleTemplate",
+      "description": "User Setup Manager Role",
+      "scope-references": [
+        "$XSAPPNAME.setUser.V",
+        "$XSAPPNAME.setUser.U"
+      ]
+    },
+    {
+      "name": "WarehouseStockAuditOnHandQtyRoleTemplate",
+      "description": "Warehouse Stock Audit On Hand Qty Role",
+      "scope-references": [
+        "$XSAPPNAME.whsStkAudit.OnHand"
+      ]
+    },
+    {
+      "name": "WarehouseStockAuditVarianceRoleTemplate",
+      "description": "Warehouse Stock Audit Vaiance Role",
+      "scope-references": [
+        "$XSAPPNAME.whsStkAudit.Var"
+      ]
+    },
+    {
+      "name": "SupplierMasterViewerRoleTemplate",
+      "description": "Supplier master view role",
+      "scope-references": [
+        "$XSAPPNAME.supplier.V"
+      ]
+    },
+    {
+      "name": "SupplierMasterManagerRoleTemplate",
+      "description": "Supplier master manager role",
+      "scope-references": [
+        "$XSAPPNAME.supplier.V",
+        "$XSAPPNAME.supplier.U"
+      ]
+    },
+    {
+      "name": "GracePeriodMasterViewerRoleTemplate",
+      "description": "Grace Period master viewer role",
+      "scope-references": [
+        "$XSAPPNAME.gracePeriod.V"
+      ]
+    },
+    {
+      "name": "GracePeriodMasterManagerRoleTemplate",
+      "description": "Grace Period master manager role",
+      "scope-references": [
+        "$XSAPPNAME.gracePeriod.V",
+        "$XSAPPNAME.gracePeriod.U"
+      ]
+    },
+    {
+      "name": "DynamicAddressViewerRoleTemplate",
+      "description": "View dynamic address role template",
+      "scope-references": [
+        "$XSAPPNAME.dynamicAddr.V"
+      ]
+    },
+    {
+      "name": "DynamicAddressManagerRoleTemplate",
+      "description": "Maintain dynamic address role template",
+      "scope-references": [
+        "$XSAPPNAME.dynamicAddr.V",
+        "$XSAPPNAME.dynamicAddr.U"
+      ]
+    },
+    {
+      "name": "GDPRManagerRoleTemplate",
+      "description": "Maintain GDPR role template",
+      "scope-references": [
+        "$XSAPPNAME.gdpr.U"
+      ]
+    },
+    {
+      "name": "CustomerTransferViewRoleTemplate",
+      "description": "View customer transfer role template",
+      "scope-references": [
+        "$XSAPPNAME.custTransfer.V"
+      ]
+    },
+    {
+      "name": "CustomerTransferManagerRoleTemplate",
+      "description": "Manager customer transfer role template",
+      "scope-references": [
+        "$XSAPPNAME.custTransfer.V",
+        "$XSAPPNAME.custTransfer.U",
+        "$XSAPPNAME.custTransfer.A"
+      ]
+    },
+    {
+      "name": "POSMAssignmentViewRoleTemplate",
+      "description": "View posm assignment role template",
+      "scope-references": [
+        "$XSAPPNAME.posmAssignment.V"
+      ]
+    },
+    {
+      "name": "POSMAssignmenManagerRoleTemplate",
+      "description": "Manager posm assignment role template",
+      "scope-references": [
+        "$XSAPPNAME.posmAssignment.V",
+        "$XSAPPNAME.posmAssignment.U"
+      ]
+    },
+    {
+      "name": "VMIManagerRoleTemplate",
+      "description": "VMI Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.vmi.U",
+        "$XSAPPNAME.vmi.V"
+      ]
+    },
+    {
+      "name": "VMIViewerRoleTemplate",
+      "description": "VMI Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.vmi.V"
+      ]
+    },
+    {
+      "name": "VMIApproverRoleTemplate",
+      "description": "VMI Approver Role Template",
+      "scope-references": [
+        "$XSAPPNAME.vmi.A"
+      ]
+    },
+    {
+      "name": "VMIReplenishmentManagerRoleTemplate",
+      "description": "VMI Replenishment Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.vmiReplenishment.U",
+        "$XSAPPNAME.vmiReplenishment.V"
+      ]
+    },
+    {
+      "name": "VMIReplenishmentViewerRoleTemplate",
+      "description": "VMI Replenishment Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.vmiReplenishment.V"
+      ]
+    },
+    {
+      "name": "VMIReplenishmentApproverRoleTemplate",
+      "description": "VMI Replenishment Approver Role Template",
+      "scope-references": [
+        "$XSAPPNAME.vmiReplenishment.A"
+      ]
+    },
+    {
+      "name": "TransactionControlViewerRoleTemplate",
+      "description": "View Configure Route Transaction Control Template",
+      "scope-references": [
+        "$XSAPPNAME.txnControl.V"
+      ]
+    },
+    {
+      "name": "TransactionControlManagerRoleTemplate",
+      "description": "Manager Configure Route Transaction Control Template",
+      "scope-references": [
+        "$XSAPPNAME.txnControl.V",
+        "$XSAPPNAME.txnControl.U"
+      ]
+    },
+    {
+      "name": "FeatureSetupViewerRoleTemplate",
+      "description": "View Feature Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.featureSetup.V"
+      ]
+    },
+    {
+      "name": "FeatureSetupManagerRoleTemplate",
+      "description": "Manager Feature Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.featureSetup.V",
+        "$XSAPPNAME.featureSetup.U"
+      ]
+    },
+    {
+      "name": "StoreSpaceViewerRoleTemplate",
+      "description": "Store Space Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.storeSpace.V"
+      ]
+    },
+    {
+      "name": "StoreSpaceManagerRoleTemplate",
+      "description": "Store Space Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.storeSpace.U",
+        "$XSAPPNAME.storeSpace.V"
+      ]
+    },
+    {
+      "name": "StoreSpaceLevelViewerRoleTemplate",
+      "description": "Store Space Level Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.storeSpaceLevel.V"
+      ]
+    },
+    {
+      "name": "StoreSpaceLevelManagerRoleTemplate",
+      "description": "Store Space Level Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.storeSpaceLevel.U",
+        "$XSAPPNAME.storeSpaceLevel.V"
+      ]
+    },
+    {
+      "name": "MerchandisingProdGroupManagerRoleTemplate",
+      "description": "Manager merchandising product group Template",
+      "scope-references": [
+        "$XSAPPNAME.mercProdGroup.V",
+        "$XSAPPNAME.mercProdGroup.U"
+      ]
+    },
+    {
+      "name": "MerchandisingProdGroupViewerRoleTemplate",
+      "description": "Manager merchandising product group Template",
+      "scope-references": [
+        "$XSAPPNAME.mercProdGroup.V"
+      ]
+    },
+    {
+      "name": "MerchandisingPriceAuditManagerRoleTemplate",
+      "description": "Manager merchandising price audit Template",
+      "scope-references": [
+        "$XSAPPNAME.mercPriceAudit.V",
+        "$XSAPPNAME.mercPriceAudit.U"
+      ]
+    },
+    {
+      "name": "MerchandisingPriceAuditViewerRoleTemplate",
+      "description": "Manager merchandising price audit Template",
+      "scope-references": [
+        "$XSAPPNAME.mercPriceAudit.V"
+      ]
+    },
+    {
+      "name": "MerchandisingFacingAuditManagerRoleTemplate",
+      "description": "Manager merchandising facing audit Template",
+      "scope-references": [
+        "$XSAPPNAME.mercFacingAudit.V",
+        "$XSAPPNAME.mercFacingAudit.U"
+      ]
+    },
+    {
+      "name": "MerchandisingFacingAuditViewerRoleTemplate",
+      "description": "Manager merchandising facing audit Template",
+      "scope-references": [
+        "$XSAPPNAME.mercFacingAudit.V"
+      ]
+    },
+    {
+      "name": "MerchandisingDistCheckManagerRoleTemplate",
+      "description": "Manager merchandising dist check Template",
+      "scope-references": [
+        "$XSAPPNAME.mercDistCheck.V",
+        "$XSAPPNAME.mercDistCheck.U"
+      ]
+    },
+    {
+      "name": "MerchandisingDistCheckViewerRoleTemplate",
+      "description": "Manager merchandising dist check Template",
+      "scope-references": [
+        "$XSAPPNAME.mercDistCheck.V"
+      ]
+    },
+    {
+      "name": "MerchandisingPlanoAuditManagerRoleTemplate",
+      "description": "Manager merchandising planogram audit Template",
+      "scope-references": [
+        "$XSAPPNAME.mercPlanoAudit.V",
+        "$XSAPPNAME.mercPlanoAudit.U"
+      ]
+    },
+    {
+      "name": "MerchandisingPlanoAuditViewerRoleTemplate",
+      "description": "Viewer merchandising planogram audit Template",
+      "scope-references": [
+        "$XSAPPNAME.mercPlanoAudit.V"
+      ]
+    },
+    {
+      "name": "RoutePlanCustAssignmentRoleTemplate",
+      "description": "Assign customers to route plan template",
+      "scope-references": [
+        "$XSAPPNAME.routeplan.U"
+      ]
+    },
+    {
+      "name": "MerchandisingRouteActivityManagerRoleTemplate",
+      "description": "Manager merchandising Route Activity Template",
+      "scope-references": [
+        "$XSAPPNAME.mercRouteActivity.V",
+        "$XSAPPNAME.mercRouteActivity.U"
+      ]
+    },
+    {
+      "name": "MerchandisingRouteActivityViewerRoleTemplate",
+      "description": "Manager merchandising Route Activity Template",
+      "scope-references": [
+        "$XSAPPNAME.mercRouteActivity.V"
+      ]
+    },
+    {
+      "name": "MerchandisingTxnViewerRoleTemplate",
+      "description": "Viewer merchandising transaction Template",
+      "scope-references": [
+        "$XSAPPNAME.mercTxn.V"
+      ]
+    },
+    {
+      "name": "MobileManagerViewerRoleTemplate",
+      "description": "Mobile Manager Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.mmDevProfile.V",
+        "$XSAPPNAME.mmDevSetting.V",
+        "$XSAPPNAME.mmDevInfo.V",
+        "$XSAPPNAME.mmRelease.V",
+        "$XSAPPNAME.mmLocale.V",
+        "$XSAPPNAME.mmInstr.V"
+      ]
+    },
+    {
+      "name": "MobileManagerDeviceManagerRoleTemplate",
+      "description": "Mobile Manager Device Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.mmDevProfile.V",
+        "$XSAPPNAME.mmDevSetting.V",
+        "$XSAPPNAME.mmDevSetting.U",
+        "$XSAPPNAME.mmDevInfo.V",
+        "$XSAPPNAME.mmRelease.V",
+        "$XSAPPNAME.mmLocale.V",
+        "$XSAPPNAME.mmInstr.V"
+      ]
+    },
+    {
+      "name": "MobileManagerManagerRoleTemplate",
+      "description": "Mobile Manager Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.mmDevProfile.V",
+        "$XSAPPNAME.mmDevProfile.U",
+        "$XSAPPNAME.mmDevSetting.V",
+        "$XSAPPNAME.mmDevSetting.U",
+        "$XSAPPNAME.mmDevInfo.V",
+        "$XSAPPNAME.mmDevInfo.U",
+        "$XSAPPNAME.mmRelease.V",
+        "$XSAPPNAME.mmRelease.U",
+        "$XSAPPNAME.mmLocale.V",
+        "$XSAPPNAME.mmLocale.U",
+        "$XSAPPNAME.mmInstr.V",
+        "$XSAPPNAME.mmInstr.U"
+      ]
+    },
+    {
+      "name": "POSMMerchandisingManagerRoleTemplate",
+      "description": "POSM Merchandising Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.posmApproval.U",
+        "$XSAPPNAME.posmRecording.U",
+        "$XSAPPNAME.posmRemoval.U",
+        "$XSAPPNAME.posmInstallation.U",
+        "$XSAPPNAME.posmRequest.U",
+        "$XSAPPNAME.posmRecording.V",
+        "$XSAPPNAME.posmRemoval.V",
+        "$XSAPPNAME.posmInstallation.V",
+        "$XSAPPNAME.posmRequest.V"
+      ]
+    },
+    {
+      "name": "POSMMerchandisingViewerRoleTemplate",
+      "description": "POSM Merchandising Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.posmRecording.V",
+        "$XSAPPNAME.posmRemoval.V",
+        "$XSAPPNAME.posmInstallation.V",
+        "$XSAPPNAME.posmRequest.V"
+      ]
+    },
+    {
+      "name": "POSMMerchandisingApproverRoleTemplate",
+      "description": "POSM Merchandising Approver Role Template",
+      "scope-references": [
+        "$XSAPPNAME.posmApproval.V",
+        "$XSAPPNAME.posmApproval.A",
+        "$XSAPPNAME.posmRecording.A",
+        "$XSAPPNAME.posmRequest.A"
+      ]
+    },
+    {
+      "name": "POSMInstallationApprovalRoleTemplate",
+      "description": "POSM Installation Approval Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.posmInstallation.A"
+      ]
+    },
+    {
+      "name": "POSMRemovalApprovalRoleTemplate",
+      "description": "POSM Removal Approval Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.posmRemoval.A"
+      ]
+    },
+    {
+      "name": "POSMDirectInstallationManagerRoleTemplate",
+      "description": "POSM Direct Installation Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.posmDirectInstallation.V",
+        "$XSAPPNAME.posmDirectInstallation.U"
+      ]
+    },
+    {
+      "name": "ScoreCardViewerRoleTemplate",
+      "description": "Score Card Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.scorecard.V"
+      ]
+    },
+    {
+      "name": "ScoreCardManagerRoleTemplate",
+      "description": "Score Card Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.scorecard.U",
+        "$XSAPPNAME.scorecard.Ass"
+      ]
+    },
+    {
+      "name": "KPITypeViewerRoleTemplate",
+      "description": "KPI Type Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.kpitype.V"
+      ]
+    },
+    {
+      "name": "KPITypeManagerRoleTemplate",
+      "description": "KPI Type Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.kpitype.U"
+      ]
+    },
+    {
+      "name": "ClaimViewerRoleTemplate",
+      "description": "Manage Claim Management View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.claim.V"
+      ]
+    },
+    {
+      "name": "ClaimManagerRoleTemplate",
+      "description": "Manage Claim Management Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.claim.V",
+        "$XSAPPNAME.claim.U",
+        "$XSAPPNAME.claim.R"
+      ]
+    },
+    {
+      "name": "ClaimApproverRoleTemplate",
+      "description": "Manage Claim Management Approver Scope template",
+      "scope-references": [
+        "$XSAPPNAME.claim.Uonly",
+        "$XSAPPNAME.claim.A"
+      ]
+    },
+    {
+      "name": "MerchAuditViewerRoleTemplate",
+      "description": "Manage Merchnadizer View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.Audit.V"
+      ]
+    },
+    {
+      "name": "MerchAuditManagerRoleTemplate",
+      "description": "Manage Merchnadizer Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.Audit.V",
+        "$XSAPPNAME.Audit.U"
+      ]
+    },
+    {
+      "name": "DynaSurveyViewerRoleTemplate",
+      "description": "Dynamic Survey View Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.dynaSurvey.V"
+      ]
+    },
+    {
+      "name": "DynaSurveyManagerRoleTemplate",
+      "description": "Dynamic Survey Manager Setup Template",
+      "scope-references": [
+        "$XSAPPNAME.dynaSurvey.U",
+        "$XSAPPNAME.dynaSurvey.V"
+      ]
+    },
+    {
+      "name": "ChecklistSetupViewerRoleTemplate",
+      "description": "Checklist View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.ChecklistSetup.V"
+      ]
+    },
+    {
+      "name": "ChecklistSetupManagerRoleTemplate",
+      "description": "Checklist Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.ChecklistSetup.V",
+        "$XSAPPNAME.ChecklistSetup.U"
+      ]
+    },
+    {
+      "name": "MerchandisingPhotoSearchViewerRoleTemplate",
+      "description": "Manage Merchandising Photo Search template",
+      "scope-references": [
+        "$XSAPPNAME.mercPhotoSearch.V"
+      ]
+    },
+    {
+      "name": "GamificationViewerRoleTemplate",
+      "description": "Gamification View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.gamification.V"
+      ]
+    },
+    {
+      "name": "GamificationManagerRoleTemplate",
+      "description": "Gamification Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.gamification.U",
+        "$XSAPPNAME.gamification.Ass"
+      ]
+    },
+    {
+      "name": "DistConfigMasterViewerRoleTemplate",
+      "description": "Distributor Configuration master viewer role",
+      "scope-references": [
+        "$XSAPPNAME.distConfig.V"
+      ]
+    },
+    {
+      "name": "DistConfigMasterManagerRoleTemplate",
+      "description": "Distributor Configuration master manager role",
+      "scope-references": [
+        "$XSAPPNAME.distConfig.V",
+        "$XSAPPNAME.distConfig.U"
+      ]
+    },
+    {
+      "name": "RefDataAgingPeriodViewerRoleTemplate",
+      "description": "Stock Take Aging Period viewer role",
+      "scope-references": [
+        "$XSAPPNAME.refdataAgingPeriod.V"
+      ]
+    },
+    {
+      "name": "RefDataAgingPeriodManagerRoleTemplate",
+      "description": "Stock Take Aging Period manager role",
+      "scope-references": [
+        "$XSAPPNAME.refdataAgingPeriod.V",
+        "$XSAPPNAME.refdataAgingPeriod.U"
+      ]
+    },
+    {
+      "name": "LicenseManagementViewerRoleTemplate",
+      "description": "Manage License Management View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.SetLicMgmt.V",
+        "$XSAPPNAME.SetLicMgmt.Ass"
+      ]
+    },
+    {
+      "name": "LicenseManagementManagerRoleTemplate",
+      "description": "Manage License Management Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.SetLicMgmt.V",
+        "$XSAPPNAME.SetLicMgmt.U",
+        "$XSAPPNAME.SetLicMgmt.Ass"
+      ]
+    },
+    {
+      "name": "RouteOptimizationViewerRoleTemplate",
+      "description": "Manage Route Optimization View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.DeliveryRouteOpt.V"
+      ]
+    },
+    {
+      "name": "RouteOptimizationManagerRoleTemplate",
+      "description": "Manage Route Optimization Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.DeliveryRouteOpt.V",
+        "$XSAPPNAME.DeliveryRouteOpt.U"
+      ]
+    },
+    {
+      "name": "RouteWarehouseMappingViewerRoleTemplate",
+      "description": "Manage Route Warehouse Mapping View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.RouteWhsMapping.V"
+      ]
+    },
+    {
+      "name": "RouteWarehouseMappingManagerRoleTemplate",
+      "description": "Manage Route Warehouse Mapping Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.RouteWhsMapping.V",
+        "$XSAPPNAME.RouteWhsMapping.U"
+      ]
+    },
+    {
+      "name": "EwalletViewerRoleTemplate",
+      "description": "Maintain Ewallet template",
+      "scope-references": [
+        "$XSAPPNAME.Ewallet.V"
+      ]
+    },
+    {
+      "name": "EwalletManagerRoleTemplate",
+      "description": "Maintain Ewallet template",
+      "scope-references": [
+        "$XSAPPNAME.Ewallet.V",
+        "$XSAPPNAME.Ewallet.U"
+      ]
+    },
+    {
+      "name": "SystemConfigurationManagerRoleTemplate",
+      "description": "System Configuration Update Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.SysConfig.U"
+      ]
+    },
+    {
+      "name": "DataQualityChkManagerRoleTemplate",
+      "description": "Data Quality Check Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.qcCheck.U"
+      ]
+    },
+    {
+      "name": "TradeAssetManufacturerViewerRoleTemplate",
+      "description": "Trade Asset Manufacturer View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetManufacturer.V"
+      ]
+    },
+    {
+      "name": "TradeAssetManufacturerManagerRoleTemplate",
+      "description": "Trade Asset Manufacturer Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetManufacturer.V",
+        "$XSAPPNAME.assetManufacturer.U"
+      ]
+    },
+    {
+      "name": "TradeAssetTypeViewerRoleTemplate",
+      "description": "Trade Asset Type View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetType.V"
+      ]
+    },
+    {
+      "name": "TradeAssetTypeManagerRoleTemplate",
+      "description": "Trade Asset Type Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetType.V",
+        "$XSAPPNAME.assetType.U"
+      ]
+    },
+    {
+      "name": "TradeAssetModelViewerRoleTemplate",
+      "description": "Trade Asset Model View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetModel.V"
+      ]
+    },
+    {
+      "name": "TradeAssetModelManagerRoleTemplate",
+      "description": "Trade Asset Model Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetModel.V",
+        "$XSAPPNAME.assetModel.U"
+      ]
+    },
+    {
+      "name": "TradeAssetMasterViewerRoleTemplate",
+      "description": "Trade Asset Master View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetMaster.V"
+      ]
+    },
+    {
+      "name": "TradeAssetMasterManagerRoleTemplate",
+      "description": "Trade Asset Master Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetMaster.V",
+        "$XSAPPNAME.assetMaster.U"
+      ]
+    },
+    {
+      "name": "TradeAssetConditionViewerRoleTemplate",
+      "description": "Trade Asset Condition View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetCondition.V"
+      ]
+    },
+    {
+      "name": "TradeAssetConditionManagerRoleTemplate",
+      "description": "Trade Asset Condition Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetCondition.V",
+        "$XSAPPNAME.assetCondition.U"
+      ]
+    },
+    {
+      "name": "TradeAssetPrevMaintViewerRoleTemplate",
+      "description": "Trade Asset Preventive Maintenance View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetPrevMaint.V"
+      ]
+    },
+    {
+      "name": "TradeAssetPrevMaintManagerRoleTemplate",
+      "description": "Trade Asset Preventive Maintenance Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetPrevMaint.V",
+        "$XSAPPNAME.assetPrevMaint.U"
+      ]
+    },
+    {
+      "name": "TradeAssetSpecialActivityViewerRoleTemplate",
+      "description": "Trade Asset Special Activity View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetSpecialActivity.V"
+      ]
+    },
+    {
+      "name": "TradeAssetSpecialActivityManagerRoleTemplate",
+      "description": "Trade Asset Special Activity Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetSpecialActivity.V",
+        "$XSAPPNAME.assetSpecialActivity.U"
+      ]
+    },
+    {
+      "name": "TradeAssetRepairFacilityViewerRoleTemplate",
+      "description": "Trade Asset Repair Facility View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetRepairFacility.V"
+      ]
+    },
+    {
+      "name": "TradeAssetRepairFacilityManagerRoleTemplate",
+      "description": "Trade Asset Repair Facility Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetRepairFacility.V",
+        "$XSAPPNAME.assetRepairFacility.U"
+      ]
+    },
+    {
+      "name": "TradeAssetRepairReasonViewerRoleTemplate",
+      "description": "Trade Asset Repair Reason View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetRepairReason.V"
+      ]
+    },
+    {
+      "name": "TradeAssetRepairReasonManagerRoleTemplate",
+      "description": "Trade Asset Repair Reason Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetRepairReason.V",
+        "$XSAPPNAME.assetRepairReason.U"
+      ]
+    },
+    {
+      "name": "TradeAssetSparePartViewerRoleTemplate",
+      "description": "Trade Asset Spare Part View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetSparePart.V"
+      ]
+    },
+    {
+      "name": "TradeAssetSparePartManagerRoleTemplate",
+      "description": "Trade Asset Spare Part Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetSparePart.V",
+        "$XSAPPNAME.assetSparePart.U"
+      ]
+    },
+    {
+      "name": "TradeAssetTransferReasonViewerRoleTemplate",
+      "description": "Trade Asset Transfer Reason View Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetTfRea.V"
+      ]
+    },
+    {
+      "name": "TradeAssetTransferReasonManagerRoleTemplate",
+      "description": "Trade Asset Transfer Reason Manager Scope template",
+      "scope-references": [
+        "$XSAPPNAME.assetTfRea.V",
+        "$XSAPPNAME.assetTfRea.U"
+      ]
+    },
+    {
+      "name": "RefDataMessageTypeViewerRoleTemplate",
+      "description": "View Message Type template",
+      "scope-references": [
+        "$XSAPPNAME.refdataMessageType.V"
+      ]
+    },
+    {
+      "name": "RefDataMessageTypeManagerRoleTemplate",
+      "description": "Maintain Message Type template",
+      "scope-references": [
+        "$XSAPPNAME.refdataMessageType.V",
+        "$XSAPPNAME.refdataMessageType.U"
+      ]
+    },
+	{
+      "name": "MessageViewerRoleTemplate",
+      "description": "Message Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.message.V"
+      ]
+    },
+    {
+      "name": "MessageManagerRoleTemplate",
+      "description": "Message Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.message.U",
+        "$XSAPPNAME.message.Ass"
+      ]
+    },
+    {
+      "name": "RefDataPlaybookTypeViewerRoleTemplate",
+      "description": "View Playbook Type template",
+      "scope-references": [
+        "$XSAPPNAME.refdataPlaybookType.V"
+      ]
+    },
+    {
+      "name": "RefDataPlaybookTypeManagerRoleTemplate",
+      "description": "Maintain Playbook Type template",
+      "scope-references": [
+        "$XSAPPNAME.refdataPlaybookType.V",
+        "$XSAPPNAME.refdataPlaybookType.U"
+      ]
+    },
+    {
+      "name": "PlaybookViewerRoleTemplate",
+      "description": "Playbook Viewer Role Template",
+      "scope-references": [
+        "$XSAPPNAME.playbook.V"
+      ]
+    },
+    {
+      "name": "PlaybookManagerRoleTemplate",
+      "description": "Playbook Manager Role Template",
+      "scope-references": [
+        "$XSAPPNAME.playbook.U",
+        "$XSAPPNAME.playbook.Ass"
+      ]    
+  },
+  {
+    "name": "SupervisorWorkPlanItemViewerRoleTemplate",
+    "description": "Supervisor Work Plan Item View Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupWrkPlanItem.V"
+    ]
+  },
+  {
+    "name": "SupervisorWorkPlanItemManagerRoleTemplate",
+    "description": "Supervisor Work Plan Item Update Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupWrkPlanItem.V",
+      "$XSAPPNAME.SupWrkPlanItem.U"
+    ]
+  },
+  {
+    "name": "SupervisorCheckListViewerRoleTemplate",
+    "description": "Supervisor Check List View Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupCheckList.V"
+    ]
+  },
+  {
+    "name": "SupervisorCheckListManagerRoleTemplate",
+    "description": "Supervisor Check List Update Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupCheckList.V",
+      "$XSAPPNAME.SupCheckList.U"
+    ]
+  },
+  {
+    "name": "SupervisorObjectiveViewerRoleTemplate",
+    "description": "Supervisor Objective View Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupObjective.V"
+    ]
+  },
+  {
+    "name": "SupervisorObjectiveManagerRoleTemplate",
+    "description": "Supervisor Objective Update Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupObjective.V",
+      "$XSAPPNAME.SupObjective.U"
+    ]
+  },
+  {
+    "name": "SupervisorAuditCategoryViewerRoleTemplate",
+    "description": "Supervisor Objective View Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupAuditCat.V"
+    ]
+  },
+  {
+    "name": "SupervisorAuditCategoryManagerRoleTemplate",
+    "description": "Supervisor Objective Update Scope Template",
+    "scope-references": [
+      "$XSAPPNAME.SupAuditCat.V",
+      "$XSAPPNAME.SupAuditCat.U"
+    ]
+  }
+  ],
+  "role-collections": [
+    {
+      "name": "NEWSPAGE_ACCENTURE_STAFF_RC",
+      "description": "Role Collection assigned to all Accenture employees working on the NewsPage project.",
+      "role-template-references": [
+        "$XSAPPNAME.NewsPageAccentureStaffRoleTemplate"
+      ]
+    },
+    {
+      "name": "NEWSPAGE_USER_RC",
+      "description": "Role Collection assigned to all NewsPage users",
+      "role-template-references": [
+        "$XSAPPNAME.AANewsPageUserRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate"
+      ]
+    },
+    {
+      "name": "SYS_IMPLEMENTER_RC",
+      "description": "Role Collection assigned to all System Implementer users",
+      "role-template-references": [
+        "$XSAPPNAME.DistManagerRoleTemplate",
+        "$XSAPPNAME.DistTransNumViewerRoleTemplate",
+        "$XSAPPNAME.CustViewerRoleTemplate",
+        "$XSAPPNAME.CustOptionsManagerRoleTemplate",
+        "$XSAPPNAME.CustApproverRoleTemplate",
+        "$XSAPPNAME.ProdManagerRoleTemplate",
+        "$XSAPPNAME.ProdPriceManagerRoleTemplate",
+        "$XSAPPNAME.ProdSectorManagerRoleTemplate",
+        "$XSAPPNAME.RouteViewerRoleTemplate",
+        "$XSAPPNAME.PromoManagerRoleTemplate",
+        "$XSAPPNAME.PromoApproverRoleTemplate",
+        "$XSAPPNAME.PromoPriorityManagerRoleTemplate",
+        "$XSAPPNAME.CustRebateViewerRoleTemplate",
+        "$XSAPPNAME.CustRebateApproverRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityHQViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityApproverRoleTemplate",
+        "$XSAPPNAME.WarehouseViewerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityViewerRoleTemplate",
+        "$XSAPPNAME.MSLManagerRoleTemplate",
+        "$XSAPPNAME.PerformanceUploadManagerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeManagerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMManagerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonManagerRoleTemplate",
+        "$XSAPPNAME.RefDataVanViewerRoleTemplate",
+        "$XSAPPNAME.RefDataQCManagerRoleTemplate",
+        "$XSAPPNAME.TaxManagementManagerRoleTemplate",
+        "$XSAPPNAME.AttributeManagerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressManagerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarManagerRoleTemplate",
+        "$XSAPPNAME.StepOfCallManagerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingManagerRoleTemplate",
+        "$XSAPPNAME.ApplicationSetupViewerRoleTemplate",
+        "$XSAPPNAME.ApplicationSetupMainManagerRoleTemplate",
+        "$XSAPPNAME.NotificationManagerRoleTemplate",
+        "$XSAPPNAME.MainDashboardViewerRoleTemplate",
+        "$XSAPPNAME.SalesDashboardViewerRoleTemplate",
+        "$XSAPPNAME.InventorydashboardViewerRoleTemplate",
+        "$XSAPPNAME.BudgetutilizationdashboardViewerRoleTemplate",
+        "$XSAPPNAME.HolidayManagerRoleTemplate",
+        "$XSAPPNAME.MetadataManagerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyManagerRoleTemplate",
+        "$XSAPPNAME.LOBManagerRoleTemplate",
+        "$XSAPPNAME.AttributeModuleManagerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToManagerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageManagerRoleTemplate",
+        "$XSAPPNAME.HierarchyRefManagerRoleTemplate",
+        "$XSAPPNAME.ReportGenerateViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserManagerRoleTemplate",
+        "$XSAPPNAME.ReportSetupManagerRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterManagerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitManagerRoleTemplate",
+        "$XSAPPNAME.GDPRManagerRoleTemplate",
+        "$XSAPPNAME.UserGroupManagerRoleTemplate",
+        "$XSAPPNAME.UserGroupAssignorRoleTemplate",
+        "$XSAPPNAME.CustomerTransferManagerRoleTemplate",
+        "$XSAPPNAME.POSMAssignmenManagerRoleTemplate",
+        "$XSAPPNAME.TransactionControlViewerRoleTemplate",
+        "$XSAPPNAME.TransactionControlManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelViewerRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.FeatureSetupManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingFacingAuditManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityManagerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerDeviceManagerRoleTemplate",
+        "$XSAPPNAME.MobileManagerManagerRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeManagerRoleTemplate",
+        "$XSAPPNAME.ClaimManagerRoleTemplate",
+        "$XSAPPNAME.ClaimApproverRoleTemplate",
+        "$XSAPPNAME.MerchAuditManagerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.ChecklistSetupManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.MSLAssignorRoleTemplate",
+        "$XSAPPNAME.ScoreCardManagerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.GamificationManagerRoleTemplate",
+        "$XSAPPNAME.DistConfigMasterManagerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodManagerRoleTemplate",
+        "$XSAPPNAME.VMIViewerRoleTemplate",
+        "$XSAPPNAME.VMIReplenishmentViewerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingTxnViewerRoleTemplate",
+        "$XSAPPNAME.LicenseManagementManagerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingApproverRoleTemplate",
+        "$XSAPPNAME.SystemConfigurationManagerRoleTemplate",
+        "$XSAPPNAME.EwalletManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonManagerRoleTemplate",
+        "$XSAPPNAME.EwalletManagerRoleTemplate",
+        "$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+        "$XSAPPNAME.RefDataMessageTypeManagerRoleTemplate",
+        "$XSAPPNAME.MessageViewerRoleTemplate",
+        "$XSAPPNAME.MessageManagerRoleTemplate",
+        "$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+        "$XSAPPNAME.RefDataPlaybookTypeManagerRoleTemplate",
+        "$XSAPPNAME.PlaybookViewerRoleTemplate",
+        "$XSAPPNAME.PlaybookManagerRoleTemplate"      
+	]
+    },
+    {
+      "name": "HQ_ADMIN_RC",
+      "description": "Role Collection assigned to all HQ Admin users",
+      "role-template-references": [
+        "$XSAPPNAME.DistManagerRoleTemplate",
+        "$XSAPPNAME.DistTransNumViewerRoleTemplate",
+        "$XSAPPNAME.CustViewerRoleTemplate",
+        "$XSAPPNAME.CustApproverRoleTemplate",
+        "$XSAPPNAME.CustReviewerRoleTemplate",
+        "$XSAPPNAME.ProdManagerRoleTemplate",
+        "$XSAPPNAME.ProdPriceManagerRoleTemplate",
+        "$XSAPPNAME.ProdSectorManagerRoleTemplate",
+        "$XSAPPNAME.RouteManagerRoleTemplate",
+        "$XSAPPNAME.PromoManagerRoleTemplate",
+        "$XSAPPNAME.PromoApproverRoleTemplate",
+        "$XSAPPNAME.PromoPriorityManagerRoleTemplate",
+        "$XSAPPNAME.CustRebateViewerRoleTemplate",
+        "$XSAPPNAME.CustRebateApproverRoleTemplate",
+        "$XSAPPNAME.WarehouseViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityHQViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityApproverRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityViewerRoleTemplate",
+        "$XSAPPNAME.MSLManagerRoleTemplate",
+        "$XSAPPNAME.MSLAssignorRoleTemplate",
+        "$XSAPPNAME.PerformanceUploadManagerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeManagerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMManagerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonManagerRoleTemplate",
+        "$XSAPPNAME.RefDataVanViewerRoleTemplate",
+        "$XSAPPNAME.RefDataQCManagerRoleTemplate",
+        "$XSAPPNAME.TaxManagementManagerRoleTemplate",
+        "$XSAPPNAME.AttributeManagerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressViewerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarManagerRoleTemplate",
+        "$XSAPPNAME.StepOfCallManagerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingManagerRoleTemplate",
+        "$XSAPPNAME.ApplicationSetupManagerRoleTemplate",
+        "$XSAPPNAME.NotificationManagerRoleTemplate",
+        "$XSAPPNAME.MainDashboardViewerRoleTemplate",
+        "$XSAPPNAME.SalesDashboardViewerRoleTemplate",
+        "$XSAPPNAME.InventorydashboardViewerRoleTemplate",
+        "$XSAPPNAME.BudgetutilizationdashboardViewerRoleTemplate",
+        "$XSAPPNAME.HolidayManagerRoleTemplate",
+        "$XSAPPNAME.MetadataViewerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyManagerRoleTemplate",
+        "$XSAPPNAME.LOBViewerRoleTemplate",
+        "$XSAPPNAME.AttributeModuleViewerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageViewerRoleTemplate",
+        "$XSAPPNAME.HierarchyRefViewerRoleTemplate",
+        "$XSAPPNAME.ReportGenerateViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserApprovalRoleTemplate",
+        "$XSAPPNAME.WarehouseStockAuditOnHandQtyRoleTemplate",
+        "$XSAPPNAME.WarehouseStockAuditVarianceRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterManagerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupAssignorRoleTemplate",
+        "$XSAPPNAME.CustomerTransferManagerRoleTemplate",
+        "$XSAPPNAME.POSMAssignmenManagerRoleTemplate",
+        "$XSAPPNAME.NewCustApproverRoleTemplate",
+        "$XSAPPNAME.TransactionControlViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelViewerRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingFacingAuditManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditManagerRoleTemplate",
+        "$XSAPPNAME.RoutePlanCustAssignmentRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingTxnViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerDeviceManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingApproverRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.ScoreCardManagerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeManagerRoleTemplate",
+        "$XSAPPNAME.ClaimApproverRoleTemplate",
+        "$XSAPPNAME.MerchAuditManagerRoleTemplate",
+        "$XSAPPNAME.ClaimViewerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.ChecklistSetupManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.GamificationManagerRoleTemplate",
+        "$XSAPPNAME.DistConfigMasterManagerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodManagerRoleTemplate",
+        "$XSAPPNAME.VMIViewerRoleTemplate",
+        "$XSAPPNAME.VMIApproverRoleTemplate",
+        "$XSAPPNAME.VMIReplenishmentManagerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.LicenseManagementViewerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingManagerRoleTemplate",
+        "$XSAPPNAME.EwalletManagerRoleTemplate",
+        "$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonManagerRoleTemplate",
+		"$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+		"$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+		"$XSAPPNAME.RefDataMessageTypeManagerRoleTemplate",
+		"$XSAPPNAME.MessageViewerRoleTemplate",
+		"$XSAPPNAME.MessageManagerRoleTemplate",
+		"$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+		"$XSAPPNAME.RefDataPlaybookTypeManagerRoleTemplate",
+		"$XSAPPNAME.PlaybookViewerRoleTemplate",
+		"$XSAPPNAME.PlaybookManagerRoleTemplate"      
+	]
+    },
+    {
+      "name": "HQ_USER_RC",
+      "description": "Role Collection assigned to all HQ users",
+      "role-template-references": [
+        "$XSAPPNAME.DistManagerRoleTemplate",
+        "$XSAPPNAME.DistTransNumViewerRoleTemplate",
+        "$XSAPPNAME.CustViewerRoleTemplate",
+        "$XSAPPNAME.CustApproverRoleTemplate",
+        "$XSAPPNAME.CustReviewerRoleTemplate",
+        "$XSAPPNAME.ProdManagerRoleTemplate",
+        "$XSAPPNAME.ProdPriceManagerRoleTemplate",
+        "$XSAPPNAME.ProdSectorManagerRoleTemplate",
+        "$XSAPPNAME.RouteManagerRoleTemplate",
+        "$XSAPPNAME.PromoManagerRoleTemplate",
+        "$XSAPPNAME.PromoApproverRoleTemplate",
+        "$XSAPPNAME.PromoPriorityManagerRoleTemplate",
+        "$XSAPPNAME.CustRebateViewerRoleTemplate",
+        "$XSAPPNAME.CustRebateApproverRoleTemplate",
+        "$XSAPPNAME.WarehouseViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityHQViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityApproverRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityViewerRoleTemplate",
+        "$XSAPPNAME.MSLManagerRoleTemplate",
+        "$XSAPPNAME.MSLAssignorRoleTemplate",
+        "$XSAPPNAME.PerformanceUploadManagerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeManagerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMManagerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonManagerRoleTemplate",
+        "$XSAPPNAME.RefDataVanViewerRoleTemplate",
+        "$XSAPPNAME.RefDataQCManagerRoleTemplate",
+        "$XSAPPNAME.TaxManagementManagerRoleTemplate",
+        "$XSAPPNAME.AttributeManagerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressViewerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarManagerRoleTemplate",
+        "$XSAPPNAME.StepOfCallManagerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingViewerRoleTemplate",
+        "$XSAPPNAME.ApplicationSetupViewerRoleTemplate",
+        "$XSAPPNAME.NotificationManagerRoleTemplate",
+        "$XSAPPNAME.MainDashboardViewerRoleTemplate",
+        "$XSAPPNAME.SalesDashboardViewerRoleTemplate",
+        "$XSAPPNAME.InventorydashboardViewerRoleTemplate",
+        "$XSAPPNAME.BudgetutilizationdashboardViewerRoleTemplate",
+        "$XSAPPNAME.HolidayManagerRoleTemplate",
+        "$XSAPPNAME.MetadataViewerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyManagerRoleTemplate",
+        "$XSAPPNAME.ReportGenerateViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserApprovalRoleTemplate",
+        "$XSAPPNAME.AttributeModuleViewerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageViewerRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterManagerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupViewerRoleTemplate",
+        "$XSAPPNAME.CustomerTransferManagerRoleTemplate",
+        "$XSAPPNAME.POSMAssignmentViewRoleTemplate",
+        "$XSAPPNAME.NewCustApproverRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelManagerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingFacingAuditManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditViewerRoleTemplate",
+        "$XSAPPNAME.RoutePlanCustAssignmentRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingTxnViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerDeviceManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingApproverRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.ScoreCardManagerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeManagerRoleTemplate",
+        "$XSAPPNAME.ClaimApproverRoleTemplate",
+        "$XSAPPNAME.MerchAuditManagerRoleTemplate",
+        "$XSAPPNAME.ClaimViewerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.ChecklistSetupManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.GamificationManagerRoleTemplate",
+        "$XSAPPNAME.DistConfigMasterManagerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodManagerRoleTemplate",
+        "$XSAPPNAME.VMIViewerRoleTemplate",
+        "$XSAPPNAME.VMIApproverRoleTemplate",
+        "$XSAPPNAME.VMIReplenishmentManagerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingManagerRoleTemplate",
+        "$XSAPPNAME.EwalletViewerRoleTemplate",
+        "$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartManagerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonManagerRoleTemplate",
+		"$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+		"$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+		"$XSAPPNAME.MessageViewerRoleTemplate",
+		"$XSAPPNAME.MessageManagerRoleTemplate",
+		"$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+		"$XSAPPNAME.PlaybookViewerRoleTemplate",
+		"$XSAPPNAME.PlaybookManagerRoleTemplate"      
+	]
+    },
+    {
+      "name": "DIST_ADMIN_RC",
+      "description": "Role Collection assigned to all Dist Admin users",
+      "role-template-references": [
+        "$XSAPPNAME.DistViewerRoleTemplate",
+        "$XSAPPNAME.DistOptionsManagerRoleTemplate",
+        "$XSAPPNAME.DistTransNumManagerRoleTemplate",
+        "$XSAPPNAME.CustManagerRoleTemplate",
+        "$XSAPPNAME.CustOptionsManagerRoleTemplate",
+        "$XSAPPNAME.NewCustApproverRoleTemplate",
+        "$XSAPPNAME.ProdManagerRoleTemplate",
+        "$XSAPPNAME.ProdOptionsManagerRoleTemplate",
+        "$XSAPPNAME.ProdPriceManagerRoleTemplate",
+        "$XSAPPNAME.ProdSectorViewerRoleTemplate",
+        "$XSAPPNAME.RouteManagerRoleTemplate",
+        "$XSAPPNAME.PromoManagerRoleTemplate",
+        "$XSAPPNAME.PromoApproverRoleTemplate",
+        "$XSAPPNAME.CustRebateManagerRoleTemplate",
+        "$XSAPPNAME.CustRebateApproverRoleTemplate",
+        "$XSAPPNAME.WarehouseManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityReviewerRoleTemplate",
+        "$XSAPPNAME.VanInventoryActivityManagerRoleTemplate",
+        "$XSAPPNAME.CustomerTransActivityManagerRoleTemplate",
+        "$XSAPPNAME.CustomerTransActivityReviwerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityManagerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityReviewerRoleTemplate",
+        "$XSAPPNAME.MSLViewerRoleTemplate",
+        "$XSAPPNAME.PerformanceUploadManagerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingTermsManagerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataBankManagerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeViewerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermManagerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMManagerRoleTemplate",
+        "$XSAPPNAME.RefDataVanManagerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonViewerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonWHMappingManagerRoleTemplate",
+        "$XSAPPNAME.RefDataQCViewerRoleTemplate",
+        "$XSAPPNAME.AttributeViewerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarViewerRoleTemplate",
+        "$XSAPPNAME.StepOfCallViewerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingViewerRoleTemplate",
+        "$XSAPPNAME.NotificationManagerRoleTemplate",
+        "$XSAPPNAME.MainDashboardViewerRoleTemplate",
+        "$XSAPPNAME.SalesDashboardViewerRoleTemplate",
+        "$XSAPPNAME.InventorydashboardViewerRoleTemplate",
+        "$XSAPPNAME.BudgetutilizationdashboardViewerRoleTemplate",
+        "$XSAPPNAME.HolidayManagerRoleTemplate",
+        "$XSAPPNAME.MetadataViewerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyManagerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.AttributeModuleViewerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseStockAuditOnHandQtyRoleTemplate",
+        "$XSAPPNAME.WarehouseStockAuditVarianceRoleTemplate",
+        "$XSAPPNAME.ReportGenerateViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserRequestRoleTemplate",
+        "$XSAPPNAME.SupplierMasterManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityViewerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitViewerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressViewerRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupAssignorRoleTemplate",
+        "$XSAPPNAME.CustomerTransferViewRoleTemplate",
+        "$XSAPPNAME.POSMAssignmentViewRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingFacingAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingTxnViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerDeviceManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingManagerRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.ClaimManagerRoleTemplate",
+        "$XSAPPNAME.MerchAuditViewerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.ChecklistSetupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.POSMInstallationApprovalRoleTemplate",
+        "$XSAPPNAME.POSMRemovalApprovalRoleTemplate",
+        "$XSAPPNAME.POSMDirectInstallationManagerRoleTemplate",
+        "$XSAPPNAME.DistConfigMasterViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.TaxManagementManagerRoleTemplate",
+        "$XSAPPNAME.VMIManagerRoleTemplate",
+        "$XSAPPNAME.VMIReplenishmentViewerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.RouteOptimizationManagerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingViewerRoleTemplate",
+        "$XSAPPNAME.EwalletViewerRoleTemplate",
+        "$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonViewerRoleTemplate",
+		"$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+		"$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+		"$XSAPPNAME.MessageViewerRoleTemplate",
+		"$XSAPPNAME.MessageManagerRoleTemplate",
+		"$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+		"$XSAPPNAME.PlaybookViewerRoleTemplate"      
+	]
+    },
+    {
+      "name": "DIST_OPERATOR_RC",
+      "description": "Role Collection assigned to all Dist Operator users",
+      "role-template-references": [
+        "$XSAPPNAME.DistViewerRoleTemplate",
+        "$XSAPPNAME.DistOptionsManagerRoleTemplate",
+        "$XSAPPNAME.DistTransNumManagerRoleTemplate",
+        "$XSAPPNAME.CustManagerRoleTemplate",
+        "$XSAPPNAME.NewCustApproverRoleTemplate",
+        "$XSAPPNAME.ProdViewerRoleTemplate",
+        "$XSAPPNAME.ProdOptionsManagerRoleTemplate",
+        "$XSAPPNAME.ProdPriceViewerRoleTemplate",
+        "$XSAPPNAME.ProdSectorViewerRoleTemplate",
+        "$XSAPPNAME.RouteManagerRoleTemplate",
+        "$XSAPPNAME.PromoManagerRoleTemplate",
+        "$XSAPPNAME.PromoApproverRoleTemplate",
+        "$XSAPPNAME.CustRebateManagerRoleTemplate",
+        "$XSAPPNAME.CustRebateApproverRoleTemplate",
+        "$XSAPPNAME.WarehouseManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityManagerRoleTemplate",
+        "$XSAPPNAME.VanInventoryActivityManagerRoleTemplate",
+        "$XSAPPNAME.CustomerTransActivityManagerRoleTemplate",
+        "$XSAPPNAME.CustomerTransActivityReviwerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityManagerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityReviewerRoleTemplate",
+        "$XSAPPNAME.MSLViewerRoleTemplate",
+        "$XSAPPNAME.PerformanceUploadManagerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingTermsManagerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataBankManagerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeViewerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermManagerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMViewerRoleTemplate",
+        "$XSAPPNAME.RefDataVanManagerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonViewerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonWHMappingManagerRoleTemplate",
+        "$XSAPPNAME.RefDataQCViewerRoleTemplate",
+        "$XSAPPNAME.TaxManagementViewerRoleTemplate",
+        "$XSAPPNAME.AttributeViewerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarViewerRoleTemplate",
+        "$XSAPPNAME.StepOfCallViewerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingViewerRoleTemplate",
+        "$XSAPPNAME.NotificationManagerRoleTemplate",
+        "$XSAPPNAME.MainDashboardViewerRoleTemplate",
+        "$XSAPPNAME.SalesDashboardViewerRoleTemplate",
+        "$XSAPPNAME.InventorydashboardViewerRoleTemplate",
+        "$XSAPPNAME.BudgetutilizationdashboardViewerRoleTemplate",
+        "$XSAPPNAME.HolidayManagerRoleTemplate",
+        "$XSAPPNAME.MetadataViewerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyViewerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.ReportGenerateViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserRequestRoleTemplate",
+        "$XSAPPNAME.AttributeModuleViewerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageViewerRoleTemplate",
+        "$XSAPPNAME.SupplierMasterManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityReviewerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitViewerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressViewerRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupViewerRoleTemplate",
+        "$XSAPPNAME.CustomerTransferViewRoleTemplate",
+        "$XSAPPNAME.POSMAssignmentViewRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceViewerRoleTemplate",
+        "$XSAPPNAME.StoreSpaceLevelViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingProdGroupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPriceAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingFacingAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingDistCheckViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPlanoAuditViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingRouteActivityViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingTxnViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerDeviceManagerRoleTemplate",
+        "$XSAPPNAME.POSMMerchandisingViewerRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.ClaimManagerRoleTemplate",
+        "$XSAPPNAME.MerchAuditViewerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.ChecklistSetupViewerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.POSMDirectInstallationManagerRoleTemplate",
+        "$XSAPPNAME.DistConfigMasterViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.VMIManagerRoleTemplate",
+        "$XSAPPNAME.VMIReplenishmentViewerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.RouteOptimizationManagerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingViewerRoleTemplate",
+        "$XSAPPNAME.EwalletViewerRoleTemplate",
+        "$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetManufacturerViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTypeViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetModelViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetMasterViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetConditionViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetPrevMaintViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSpecialActivityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairFacilityViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetRepairReasonViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetSparePartViewerRoleTemplate",
+        "$XSAPPNAME.TradeAssetTransferReasonViewerRoleTemplate",
+		"$XSAPPNAME.DataQualityChkManagerRoleTemplate",
+		"$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+		"$XSAPPNAME.MessageViewerRoleTemplate",
+		"$XSAPPNAME.MessageManagerRoleTemplate",
+		"$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+		"$XSAPPNAME.PlaybookViewerRoleTemplate"
+      ]
+    },
+    {
+      "name": "DIST_SLSMAN_RC",
+      "description": "Role Collection assigned to all Dist Slsman users",
+      "role-template-references": [
+        "$XSAPPNAME.DistTransNumViewerRoleTemplate",
+        "$XSAPPNAME.DistViewerRoleTemplate",
+        "$XSAPPNAME.CustManagerRoleTemplate",
+        "$XSAPPNAME.CustOptionsManagerRoleTemplate",
+        "$XSAPPNAME.ProdViewerRoleTemplate",
+        "$XSAPPNAME.ProdPriceViewerRoleTemplate",
+        "$XSAPPNAME.ProdSectorViewerRoleTemplate",
+        "$XSAPPNAME.RouteViewerRoleTemplate",
+        "$XSAPPNAME.PromoViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityReviewerRoleTemplate",
+        "$XSAPPNAME.VanInventoryActivityManagerRoleTemplate",
+        "$XSAPPNAME.CustomerTransActivityManagerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityViewerRoleTemplate",
+        "$XSAPPNAME.MSLViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeViewerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMViewerRoleTemplate",
+        "$XSAPPNAME.RefDataVanViewerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonViewerRoleTemplate",
+        "$XSAPPNAME.RefDataQCViewerRoleTemplate",
+        "$XSAPPNAME.TaxManagementViewerRoleTemplate",
+        "$XSAPPNAME.AttributeViewerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressViewerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarViewerRoleTemplate",
+        "$XSAPPNAME.StepOfCallViewerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingViewerRoleTemplate",
+        "$XSAPPNAME.HolidayViewerRoleTemplate",
+        "$XSAPPNAME.MetadataViewerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserViewerRoleTemplate",
+        "$XSAPPNAME.AttributeModuleViewerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityViewerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitViewerRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupViewerRoleTemplate",
+        "$XSAPPNAME.CustomerTransferViewRoleTemplate",
+        "$XSAPPNAME.POSMAssignmentViewRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.ClaimViewerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.RouteOptimizationViewerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingViewerRoleTemplate",
+        "$XSAPPNAME.EwalletViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+		"$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+		"$XSAPPNAME.MessageViewerRoleTemplate",
+		"$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+		"$XSAPPNAME.PlaybookViewerRoleTemplate"
+      ]
+    },
+    {
+      "name": "HQ_SLSMAN_RC",
+      "description": "Role Collection assigned to all HQ Slsman users",
+      "role-template-references": [
+        "$XSAPPNAME.DistTransNumViewerRoleTemplate",
+        "$XSAPPNAME.DistViewerRoleTemplate",
+        "$XSAPPNAME.CustManagerRoleTemplate",
+        "$XSAPPNAME.CustOptionsManagerRoleTemplate",
+        "$XSAPPNAME.ProdViewerRoleTemplate",
+        "$XSAPPNAME.ProdPriceViewerRoleTemplate",
+        "$XSAPPNAME.ProdSectorViewerRoleTemplate",
+        "$XSAPPNAME.RouteViewerRoleTemplate",
+        "$XSAPPNAME.PromoViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityManagerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityReviewerRoleTemplate",
+        "$XSAPPNAME.VanInventoryActivityManagerRoleTemplate",
+        "$XSAPPNAME.CustomerTransActivityManagerRoleTemplate",
+        "$XSAPPNAME.CompanyTransActivityViewerRoleTemplate",
+        "$XSAPPNAME.MSLViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataBankViewerRoleTemplate",
+        "$XSAPPNAME.RefDataClaimTypeViewerRoleTemplate",
+        "$XSAPPNAME.RefDataInvoiceTermsViewerRoleTemplate",
+        "$XSAPPNAME.RefDataUOMViewerRoleTemplate",
+        "$XSAPPNAME.RefDataVanViewerRoleTemplate",
+        "$XSAPPNAME.RefDataReasonViewerRoleTemplate",
+        "$XSAPPNAME.RefDataQCViewerRoleTemplate",
+        "$XSAPPNAME.TaxManagementViewerRoleTemplate",
+        "$XSAPPNAME.AttributeViewerRoleTemplate",
+        "$XSAPPNAME.DynamicAddressViewerRoleTemplate",
+        "$XSAPPNAME.SalesCalendarViewerRoleTemplate",
+        "$XSAPPNAME.StepOfCallViewerRoleTemplate",
+        "$XSAPPNAME.ApplicationSettingViewerRoleTemplate",
+        "$XSAPPNAME.HolidayViewerRoleTemplate",
+        "$XSAPPNAME.MetadataViewerRoleTemplate",
+        "$XSAPPNAME.DynamicHierarchyViewerRoleTemplate",
+        "$XSAPPNAME.UserInfoViewerRoleTemplate",
+        "$XSAPPNAME.UserViewerRoleTemplate",
+        "$XSAPPNAME.AttributeModuleViewerRoleTemplate",
+        "$XSAPPNAME.AttributeAssignToViewerRoleTemplate",
+        "$XSAPPNAME.AttributeUsageViewerRoleTemplate",
+        "$XSAPPNAME.WarehouseActivityViewerRoleTemplate",
+        "$XSAPPNAME.RefDataMeasurementUnitViewerRoleTemplate",
+        "$XSAPPNAME.GracePeriodMasterViewerRoleTemplate",
+        "$XSAPPNAME.UserGroupViewerRoleTemplate",
+        "$XSAPPNAME.CustomerTransferViewRoleTemplate",
+        "$XSAPPNAME.POSMAssignmentViewRoleTemplate",
+        "$XSAPPNAME.FeatureSetupViewerRoleTemplate",
+        "$XSAPPNAME.MobileManagerViewerRoleTemplate",
+        "$XSAPPNAME.ScoreCardViewerRoleTemplate",
+        "$XSAPPNAME.KPITypeViewerRoleTemplate",
+        "$XSAPPNAME.ClaimViewerRoleTemplate",
+        "$XSAPPNAME.DynaSurveyManagerRoleTemplate",
+        "$XSAPPNAME.MerchandisingPhotoSearchViewerRoleTemplate",
+        "$XSAPPNAME.GamificationViewerRoleTemplate",
+        "$XSAPPNAME.RefDataAgingPeriodViewerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.RouteOptimizationViewerRoleTemplate",
+        "$XSAPPNAME.ObjectStoreManagerRoleTemplate",
+        "$XSAPPNAME.PerformanceUploadManagerRoleTemplate",
+        "$XSAPPNAME.RouteWarehouseMappingViewerRoleTemplate",
+        "$XSAPPNAME.EwalletViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorWorkPlanItemViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorCheckListViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorObjectiveViewerRoleTemplate",
+        "$XSAPPNAME.SupervisorAuditCategoryViewerRoleTemplate",
+        "$XSAPPNAME.RefDataMessageTypeViewerRoleTemplate",
+        "$XSAPPNAME.MessageViewerRoleTemplate",
+        "$XSAPPNAME.RefDataPlaybookTypeViewerRoleTemplate",
+        "$XSAPPNAME.PlaybookViewerRoleTemplate"
+      ]
+    }
+  ]
+}
