@@ -1,0 +1,23 @@
+---
+applications:
+- name: claim-svc-((env))
+
+  buildpacks:
+    - nodejs_buildpack
+
+  instances: 1
+  memory: 512M
+  disk_quota: 2048M
+
+  services:
+  - ((xsuaa-service-instance))
+  - ((db-service-instance))
+  - ((rabbitmq-service-instance))
+  - ((cache-service-instance))
+  - ((application-logs-service-instance))
+  - ((ups-credential-service-instance))
+  - ((ups-impersonation-service-instance))
+
+  env:
+    OPTIMIZE_MEMORY: true # --sets max_old_space_size based on the available memory of the instance    
+    CHECK_LICENSE: ((check-license))

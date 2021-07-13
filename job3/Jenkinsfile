@@ -1,0 +1,4 @@
+@Library('my-shared-library') _
+updateManifest {
+  
+}
